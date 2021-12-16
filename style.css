@@ -3,12 +3,21 @@
     --color2:#D98041;
     --color3:#F07E53;
     --color4:#D95341;
-    --color5:#F84A59;
+    --color5:#e74553;
 }
 body{
     margin:0;
     color:white;
     font-family: sans-serif;
+}
+header{
+    background: url(./assets/logo.gif);
+    background-size: 9em;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #0c0c0c;
+    text-align: center;
+    height:6.3em;
 }
 figure{
     margin: auto 0;
@@ -33,21 +42,25 @@ figcaption{
     border-radius: 2em;
 }
 figcaption:hover,figure:hover figcaption{
-    border:2px solid coral;
+    border:2px solid var(--color5);
 }
 h1{
     margin: 0;
     padding: 1em 0;
 }
-header{
-    text-align: center;
-    background-color: var(--color1);
-}
 section{
+    position: absolute;
+    background: url(assets/squid-game-unit.jpg);
+    background-size: cover;
     background-color: var(--color3);
     display: flex;
+    bottom: 0;
+    top: 6.3em;
+    right: 0;
+    left: 0;
 }
 article{
+    opacity: .9;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -66,8 +79,14 @@ article button{
     background-color: rgba(66, 66, 66, 0.753);
     border-radius: 2em;
     padding:.5em;
+    height:3em;
 }
-
+article button:hover{
+    border:2px solid var(--color3);
+}
 .reverse{
     flex-direction: row-reverse;
+}
+.empty{
+    display:none;
 }
