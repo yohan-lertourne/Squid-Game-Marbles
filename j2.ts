@@ -10,6 +10,7 @@ function pair () {
         alert("lose");
     }
 }
+
 function impair (){
     if (number % 2 === 0){
         alert("lose");
