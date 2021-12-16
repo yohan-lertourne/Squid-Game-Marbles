@@ -11,23 +11,29 @@ body{
     font-family: sans-serif;
 }
 figure{
-    background: radial-gradient(circle, rgba(9,9,121,1) 18%, rgba(0,212,255,1) 55%, rgba(2,0,36,1) 87%);
-    width:2.2em;
     margin: auto 0;
     border-radius: 2em;
     border:3px solid var(--color5);
 }
-figure:hover{
-    border:3px solid coral;
+figure img{
+    cursor:pointer;
+    border:2px solid white;
+    border-radius: 50%;
+    background-color: wheat;
 }
 figcaption{
     position: relative;
     cursor: pointer;
-    bottom:.5em;
-    left:.6em;
+    bottom: 5.7em;
+    padding: 1em;
+    left: 32%;
     background:black;
+    border:2px solid grey;
     width:1em;
     border-radius: 2em;
+}
+figcaption:hover,figure:hover figcaption{
+    border:2px solid coral;
 }
 h1{
     margin: 0;
