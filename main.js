@@ -4,7 +4,7 @@ function initPlayers() {
     window.localStorage.setItem('nombreBillesJoueur1', billes);
     window.localStorage.setItem('nombreBillesJoueur2', billes);
 }
-initPlayers;
+initPlayers();
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
 let varStor = 0;
