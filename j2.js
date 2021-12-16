@@ -5,10 +5,10 @@ let number = localStorage.getItem("nombreBilles");
 let get = document.getElementsByTagName("button");
 let actif = document.getElementsByTagName("h2");
 let test = actif[1].textContent;
-console.log(test);
 let joueur3 = Number(joueur1);
 let joueur4 = Number(joueur2);
 let number2 = Number(number);
+let tab1;
 function win() {
     if (test == "Joueur 1") {
         joueur3 += number2;
@@ -60,7 +60,13 @@ function impair() {
         win();
     }
 }
+function billes() {
+    for (let i = 0; i < joueur3; i++) {
+        tab1[i].push(Math.floor(Math.random() * 56) + 1);
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
     get[0].addEventListener("click", pair);
     get[1].addEventListener("click", impair);
 });
+billes();
