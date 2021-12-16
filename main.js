@@ -4,6 +4,7 @@ let titreJoueurs = document.getElementsByTagName("h2");
 let varStor = 0;
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
+let buttonChoice = document.getElementsByTagName("button");
 function initPlayers() {
     let billes = 10;
     window.localStorage.setItem('nombreBillesJoueur1', billes);
@@ -15,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
         figlist[i].addEventListener("click", function () {
             window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
             varStor = window.localStorage.getItem("nombreBilles");
+            //document.write(varStor)
+            buttonChoice[0].disabled = false;
+            buttonChoice[1].disabled = false;
         });
     }
 });
@@ -28,5 +32,5 @@ window.addEventListener("click", function () {
         titreJoueurs[0].innerHTML = "Joueur 1";
         titreJoueurs[1].innerHTML = "Joueur 2";
     }
-    console.log(titreJoueurs[0].textContent);
+    console.log(buttonChoice[0]);
 });
