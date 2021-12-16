@@ -4,11 +4,12 @@ let joueur2 = localStorage.getItem("nombreBillesJoueur2");
 let number = localStorage.getItem("nombreBilles");
 let get = document.getElementsByTagName("button");
 let actif = document.getElementsByTagName("h2");
+let articles = document.getElementsByTagName("article");
 let test = actif[1].textContent;
 let joueur3 = Number(joueur1);
 let joueur4 = Number(joueur2);
 let number2 = Number(number);
-let tab1;
+let tab1 = [];
 function win() {
     if (test == "Joueur 1") {
         joueur3 += number2;
@@ -62,7 +63,11 @@ function impair() {
 }
 function billes() {
     for (let i = 0; i < joueur3; i++) {
-        tab1[i].push(Math.floor(Math.random() * 56) + 1);
+        tab1.push(Math.floor(Math.random() * 56) + 1);
+        articles[0].innerHTML += ` <figure>
+                                        <img src="./assets/Billes/Bille-${tab1[i]}.png" alt="">
+                                        <figcaption>${i + 1}</figcaption>
+                                    </figure>`;
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
