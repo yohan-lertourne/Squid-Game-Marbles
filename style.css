@@ -38,10 +38,18 @@ header{
     background-color: var(--color1);
 }
 section{
+    position: absolute;
+    background: url(assets/squid-game-unit.jpg);
+    background-size: cover;
     background-color: var(--color3);
     display: flex;
+    bottom: 0;
+    top: 6.3em;
+    right: 0;
+    left: 0;
 }
 article{
+    opacity: .9;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
