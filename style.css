@@ -61,3 +61,7 @@ article button{
     border-radius: 2em;
     padding:.5em;
 }
+
+.reverse{
+    flex-direction: row-reverse;
+}
