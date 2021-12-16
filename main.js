@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         figlist[i].addEventListener("click", function () {
             window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
             varStor = window.localStorage.getItem("nombreBilles");
-            document.write(varStor);
         });
     }
 });
