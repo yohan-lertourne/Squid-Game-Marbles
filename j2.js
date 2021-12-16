@@ -1,20 +1,23 @@
-let number;
+let number = 2;
 let get = document.getElementsByTagName("button");
-
-function pair (number) {
-    if (number % 2 == 0){
-        return ("win");
+function pair () {
+    if (number % 2 === 0){
+        alert("win");
     }
     else {
-        return ("lose");
+        alert("lose");
     }
 }
 
-function impair (number){
-    if (number % 2 == 0){
-        return ("lose");
+function impair (){
+    if (number % 2 === 0){
+        alert("lose");
     }
     else {
-        return ("win");
+        alert("win");
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    get[0].addEventListener("click",pair);
+    get[1].addEventListener("click",impair);
+});
