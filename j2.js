@@ -1,8 +1,9 @@
 "use strict";
-let number = 2;
+let joueur1 = localStorage.getItem("nombreBillesJoueur1");
+let joueur2 = localStorage.getItem("nombreBillesJoueur2");
 let get = document.getElementsByTagName("button");
 function pair() {
-    if (number % 2 === 0) {
+    if (joueur1 % 2 === 0) {
         alert("win");
     }
     else {
@@ -10,7 +11,7 @@ function pair() {
     }
 }
 function impair() {
-    if (number % 2 === 0) {
+    if (joueur1 % 2 === 0) {
         alert("lose");
     }
     else {
