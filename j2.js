@@ -1,4 +1,6 @@
 let number;
+let get = document.getElementsByTagName("button");
+
 function pair (number) {
     if (number % 2 == 0){
         return ("win");
