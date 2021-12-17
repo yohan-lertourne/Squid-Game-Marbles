@@ -70,6 +70,7 @@ article{
     border-radius: 2em;
     width:50%;
     background-color: var(--color5);
+    overflow: auto;
 }
 article h2{
     width:100%;
