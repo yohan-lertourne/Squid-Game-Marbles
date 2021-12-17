@@ -53,6 +53,7 @@ function lose() {
     }
 }
 function pair() {
+    phasesJeu(3);
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
@@ -66,6 +67,7 @@ function pair() {
     }
 }
 function impair() {
+    phasesJeu(3);
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
@@ -102,8 +104,9 @@ function billes() {
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
+    getLocalStorage();
     get[0].addEventListener("click", phasesJeu);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
 });
-billes();
+//billes();

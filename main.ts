@@ -4,7 +4,8 @@ let titreJoueurs = document.getElementsByTagName("h2");
 let varStor : any = 0;
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
-let buttonChoice = document.getElementsByTagName("button")
+let buttonChoice = document.getElementsByTagName("button");
+let articleWindow = document.getElementsByTagName("article");
 
 
 // Initialisation du jeu
@@ -27,6 +28,7 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")){
 
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function() {
+    phasesJeu();
     for(let i = 0; i < figcaptionlist.length; i++){
         figlist[i].addEventListener("click",function(){
             window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
@@ -35,15 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             // Activation des boutons
-            buttonChoice[0].disabled = false;
             buttonChoice[1].disabled = false;
+            buttonChoice[2].disabled = false;
+
+
+            phasesJeu(2);
 
     })}
 });
 
 
 // Inverser les joueurs
-window.addEventListener("click", function(){
+function inverserJoueurs(){
     sectionInverse[0].classList.toggle("reverse");
     if (titreJoueurs[0].innerHTML=="Joueur 1"){
         titreJoueurs[0].innerHTML = "Joueur 2";
@@ -55,24 +60,29 @@ window.addEventListener("click", function(){
     }
 
     console.log(buttonChoice[0])
-})
+}
 
 
 // Switcher les phases de jeu
-function phasesJeu(phase=1){;
+function phasesJeu(phase = 1) {
+    ;
     switch (phase) {
         case 1:
-            console.log("Afficher les billes");
+            billes();
             break;
-
         case 2:
-            console.log("Afficher la boite fermée");
+            articles[0].innerHTML = ` <figure>
+                                        <img src="./assets/closedBox.png" alt="">
+                                    </figure>`;
             break;
-
         case 3:
-            console.log("Afficher la boite ouverte");
-            break;
 
+            let idImg: any=localStorage.getItem("nombreBilles");
+            console.log(idImg);
+            articles[0].innerHTML = ` <figure>
+                                        <img src="./assets/openedBox-${idImg}.png" alt="">
+                                    </figure>`;
+            break;
         default:
             console.log("Not exist...");
     }
