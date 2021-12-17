@@ -62,6 +62,6 @@ function phasesJeu(phase = 1) {
             console.log("Afficher la boite ouverte");
             break;
         default:
-            console.log("Not exist");
+            console.log("Not exist...");
     }
 }

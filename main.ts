@@ -75,6 +75,6 @@ function phasesJeu(phase=1){;
             break;
 
         default:
-            console.log("Not exist");
+            console.log("Not exist...");
     }
 }
