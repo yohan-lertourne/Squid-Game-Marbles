@@ -8,8 +8,10 @@ let buttonChoice = document.getElementsByTagName("button")
 
 function initPlayers(){
     let billes : any = 10;
+    let initBille:any= 0;
     window.localStorage.setItem('nombreBillesJoueur1', billes);
     window.localStorage.setItem('nombreBillesJoueur2', billes);
+    window.localStorage.setItem('nombreBilles', initBille);
 }
 
 if (!window.localStorage.getItem("nombreBillesJoueur1")){

@@ -7,8 +7,10 @@ let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
 function initPlayers() {
     let billes = 10;
+    let initBille = 0;
     window.localStorage.setItem('nombreBillesJoueur1', billes);
     window.localStorage.setItem('nombreBillesJoueur2', billes);
+    window.localStorage.setItem('nombreBilles', initBille);
 }
 if (!window.localStorage.getItem("nombreBillesJoueur1")) {
     initPlayers();

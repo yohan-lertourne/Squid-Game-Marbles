@@ -1,16 +1,22 @@
 "use strict";
-let joueur1 = localStorage.getItem("nombreBillesJoueur1");
-let joueur2 = localStorage.getItem("nombreBillesJoueur2");
-let number = localStorage.getItem("nombreBilles");
+let joueur1;
+let joueur2;
+let number;
 let get = document.getElementsByTagName("button");
 let actif = document.getElementsByTagName("h2");
 let articles = document.getElementsByTagName("article");
 let test = actif[1].textContent;
-let joueur3 = Number(joueur1);
-let joueur4 = Number(joueur2);
-let number2 = Number(number);
+let joueur3;
+let joueur4;
+let number2;
 let tab1 = [];
+function getLocalStorage() {
+    joueur1 = localStorage.getItem("nombreBillesJoueur1");
+    joueur2 = localStorage.getItem("nombreBillesJoueur2");
+    number = localStorage.getItem("nombreBilles");
+}
 function win() {
+    getLocalStorage();
     if (test == "Joueur 1") {
         joueur3 += number2;
         joueur4 -= number2;
@@ -29,6 +35,7 @@ function win() {
     }
 }
 function lose() {
+    getLocalStorage();
     if (test == "Joueur 1") {
         joueur3 -= number2;
         joueur4 += number2;
@@ -46,7 +53,12 @@ function lose() {
     }
 }
 function pair() {
-    if (number % 2 === 0) {
+    getLocalStorage();
+    joueur3 = Number(joueur1);
+    joueur4 = Number(joueur2);
+    number2 = Number(number);
+    console.log(number2);
+    if (number2 % 2 === 0) {
         win();
     }
     else {
@@ -54,7 +66,11 @@ function pair() {
     }
 }
 function impair() {
-    if (number % 2 === 0) {
+    getLocalStorage();
+    joueur3 = Number(joueur1);
+    joueur4 = Number(joueur2);
+    number2 = Number(number);
+    if (number2 % 2 === 0) {
         lose();
     }
     else {
@@ -62,6 +78,8 @@ function impair() {
     }
 }
 function billes() {
+    getLocalStorage();
+    joueur3 = Number(joueur1);
     for (let i = 0; i < joueur3; i++) {
         tab1.push(Math.floor(Math.random() * 56) + 1);
         articles[0].innerHTML += ` <figure>
@@ -71,6 +89,7 @@ function billes() {
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
+    getLocalStorage();
     get[0].addEventListener("click", pair);
     get[1].addEventListener("click", impair);
 });
