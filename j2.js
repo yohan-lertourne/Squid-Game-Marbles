@@ -101,6 +101,20 @@ function billes() {
         }
     }
 }
+function colors(){
+    let colors = document.getElementsByTagName("span");
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    let rng1 = `rgb(${r},${g},${b})`;
+    r = Math.floor(Math.random()*255);
+    g = Math.floor(Math.random()*255);
+    b = Math.floor(Math.random()*255);
+    let rng2 = `rgb(${r},${g},${b})`;
+    colors[0].style.background=`linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
+    get[0].style.background=`linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
+}
+setInterval(colors,2000);
 document.addEventListener('DOMContentLoaded', function () {
     get[0].addEventListener("click", phasesJeu);
     get[1].addEventListener("click", pair);

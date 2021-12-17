@@ -90,34 +90,43 @@ article button{
 article button:hover{
     border:2px solid var(--color3);
 }
-.startButton{
+.startButton,span{
     position: absolute;
     top: 0;
     bottom: 0;
     z-index: 1;
     width: 50%;
     margin: 5%;
-    background:radial-gradient(circle, rgba(255,0,0,1) 0%, rgb(255, 129, 56) 90%, rgba(252,124,69,1) 100%);
+    background:linear-gradient(135deg, rgba(238,174,202,1) 49%, rgba(148,187,233,1) 50%);
     justify-content: center;
     border-radius: 50%;
     border:20px ridge var(--color5);
 }
 span{
-    font-size:4em;
-    position: absolute;
-    padding:2em;
-    background:blue;
+    font-size: 4em;
+    padding: 2em;
     border-radius: 2em;
-    margin:27%;
-    z-index:2;
+    margin: 20%;
+    z-index: 2;
+    pointer-events: none;
+    border: none;
+    width: 2em;
 }
 @keyframes rotate{
     100%{
         transform: rotate(360deg);
     }
 }
+@keyframes rotateReverse{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
 .startButton:hover{
-    animation:1s infinite rotate;
+    animation:2s infinite forwards rotate;
+}
+span{
+    animation:2s infinite rotateReverse;
 }
 .box img{
     border-radius: 2em;

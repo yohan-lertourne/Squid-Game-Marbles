@@ -107,7 +107,15 @@ function billes() {
         }
     }
 }
-
+function colors(){
+    let colors = document.getElementsByTagName("span") as HTMLCollectionOf<HTMLSpanElement>;
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    colors[0].style.background=`rgb(${r},${g},${b})`;
+    get[0].style.background=`rgb(${r},${g},${b})`;
+}
+setInterval(colors,1000);
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
     get[0].addEventListener("click", pair);
