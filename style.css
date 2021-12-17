@@ -9,6 +9,7 @@ body{
     margin:0;
     color:white;
     font-family: sans-serif;
+    overflow:hidden;
 }
 header{
     background: url(./assets/logo.gif);
@@ -25,9 +26,12 @@ figure{
     border:3px solid var(--color5);
 }
 figure img{
-    cursor:pointer;
-    border:2px solid white;
+    animation: 1s infinite rotate;
+    cursor: pointer;
+    border: 2px solid white;
     border-radius: 50%;
+    height: 8em;
+    width: 8em;
     background-color: wheat;
 }
 figcaption{
@@ -50,6 +54,7 @@ h1{
 }
 section{
     position: absolute;
+    justify-content: center;
     background: url(assets/squid-game-unit.jpg);
     background-size: cover;
     background-color: var(--color3);
@@ -70,7 +75,7 @@ article{
     border-radius: 2em;
     width:50%;
     background-color: var(--color5);
-    overflow: auto;
+    overflow:auto;
 }
 article h2{
     width:100%;
@@ -84,6 +89,38 @@ article button{
 }
 article button:hover{
     border:2px solid var(--color3);
+}
+.startButton{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 50%;
+    margin: 5%;
+    background:radial-gradient(circle, rgba(255,0,0,1) 0%, rgb(255, 129, 56) 90%, rgba(252,124,69,1) 100%);
+    justify-content: center;
+    border-radius: 50%;
+    border:20px ridge var(--color5);
+}
+span{
+    font-size:4em;
+    position: absolute;
+    padding:2em;
+    background:blue;
+    border-radius: 2em;
+    margin:27%;
+    z-index:2;
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.startButton:hover{
+    animation:1s infinite rotate;
+}
+.box img{
+    border-radius: 2em;
 }
 .reverse{
     flex-direction: row-reverse;
