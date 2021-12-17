@@ -9,6 +9,7 @@ let joueur3: number;
 let joueur4: number;
 let number2: number;
 let tab1: any = [];
+let section = document.getElementsByTagName("section");
 
 function getLocalStorage() {
     joueur1 = localStorage.getItem("nombreBillesJoueur1");
@@ -21,7 +22,6 @@ function win() {
     if (test == "Joueur 1") {
         joueur3 += number2;
         joueur4 -= number2;
-        console.log(joueur3);
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
     }
@@ -61,7 +61,6 @@ function pair() {
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
     number2 = Number(number);
-    console.log(number2);
     if (number2 % 2 === 0) {
         win();
     }
@@ -88,6 +87,7 @@ function impair() {
 function billes() {
     getLocalStorage();
     joueur3 = Number(joueur1);
+    joueur4 = Number(joueur2);
     let i: number = 0;
     let random: number;
     let bool: boolean;
