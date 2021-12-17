@@ -89,7 +89,6 @@ function billes() {
     let i: number = 0;
     let random: number;
     let bool: boolean;
-    //if (section.classList.Contains("Reverse"))
     while (tab1.length < joueur3) {
         bool = false;
         random = Math.floor(Math.random() * 56) + 1;
