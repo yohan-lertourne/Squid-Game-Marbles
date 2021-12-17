@@ -11,7 +11,10 @@ function initPlayers(){
     window.localStorage.setItem('nombreBillesJoueur1', billes);
     window.localStorage.setItem('nombreBillesJoueur2', billes);
 }
+
+if (!window.localStorage.getItem("nombreBillesJoueur1")){
 initPlayers();
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     for(let i = 0; i < figcaptionlist.length; i++){
