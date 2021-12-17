@@ -10,7 +10,6 @@ let buttonChoice = document.getElementsByTagName("button");
 function initPlayers() {
     let billes = 10;
     let initBille = 0;
-    let initBille = 0;
     let phase = [1, 2, 3];
     let tour = ["j1", "j2"];
     window.localStorage.setItem('nombreBillesJoueur1', billes);
