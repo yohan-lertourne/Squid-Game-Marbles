@@ -80,12 +80,25 @@ function impair() {
 function billes() {
     getLocalStorage();
     joueur3 = Number(joueur1);
-    for (let i = 0; i < joueur3; i++) {
-        tab1.push(Math.floor(Math.random() * 56) + 1);
-        articles[0].innerHTML += ` <figure>
-                                        <img src="./assets/Billes/Bille-${tab1[i]}.png" alt="">
+    let i = 0;
+    let random;
+    let bool;
+    while (tab1.length < joueur3) {
+        bool = false;
+        random = Math.floor(Math.random() * 56) + 1;
+        for (let j = 0; j < tab1.length; j++) {
+            if (tab1[j] == random) {
+                bool = true;
+            }
+        }
+        if (!bool) {
+            tab1.push(random);
+            articles[0].innerHTML += ` <figure>
+                                        <img src="./assets/Billes/Bille-${random}.png" alt="">
                                         <figcaption>${i + 1}</figcaption>
                                     </figure>`;
+            i++;
+        }
     }
 }
 document.addEventListener('DOMContentLoaded', function () {

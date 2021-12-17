@@ -1,19 +1,19 @@
 let joueur1: any;
 let joueur2: any;
 let number: any;
-let get : any = document.getElementsByTagName("button");
+let get: any = document.getElementsByTagName("button");
 let actif: any = document.getElementsByTagName("h2");
-let articles : any = document.getElementsByTagName("article");
-let test:string = actif[1].textContent;
+let articles: any = document.getElementsByTagName("article");
+let test: string = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
 let number2: number;
-let tab1:any = [];
+let tab1: any = [];
 
-function getLocalStorage () {
-    joueur1= localStorage.getItem("nombreBillesJoueur1");
+function getLocalStorage() {
+    joueur1 = localStorage.getItem("nombreBillesJoueur1");
     joueur2 = localStorage.getItem("nombreBillesJoueur2");
-    number= localStorage.getItem("nombreBilles");
+    number = localStorage.getItem("nombreBilles");
 }
 
 function win() {
@@ -55,13 +55,13 @@ function lose() {
     }
 }
 
-function pair () {
+function pair() {
     getLocalStorage();
-    joueur3= Number(joueur1);
-    joueur4= Number(joueur2);
-    number2= Number(number);
+    joueur3 = Number(joueur1);
+    joueur4 = Number(joueur2);
+    number2 = Number(number);
     console.log(number2);
-    if (number2 % 2 === 0){
+    if (number2 % 2 === 0) {
         win();
     }
     else {
@@ -69,12 +69,12 @@ function pair () {
     }
 }
 
-function impair (){
+function impair() {
     getLocalStorage();
-    joueur3= Number(joueur1);
-    joueur4= Number(joueur2);
-    number2= Number(number);
-    if (number2 % 2 === 0){
+    joueur3 = Number(joueur1);
+    joueur4 = Number(joueur2);
+    number2 = Number(number);
+    if (number2 % 2 === 0) {
         lose();
     }
     else {
@@ -83,21 +83,34 @@ function impair (){
 }
 
 
-function billes () {
+function billes() {
     getLocalStorage();
-    joueur3= Number(joueur1);
-    for (let i = 0; i < joueur3; i++){
-        tab1.push(Math.floor(Math.random() * 56) +1);
+    joueur3 = Number(joueur1);
+    let i: number = 0;
+    let random: number;
+    let bool: boolean;
+    while (tab1.length < joueur3) {
+        bool = false;
+        random = Math.floor(Math.random() * 56) + 1;
+        for (let j: number = 0; j < tab1.length; j++) {
+            if (tab1[j] == random) {
+                bool = true;
+            }
+        }
+        if (!bool){
+        tab1.push(random);
         articles[0].innerHTML += ` <figure>
-                                        <img src="./assets/Billes/Bille-${tab1[i]}.png" alt="">
-                                        <figcaption>${i+1}</figcaption>
-                                    </figure>`
+                                        <img src="./assets/Billes/Bille-${random}.png" alt="">
+                                        <figcaption>${i + 1}</figcaption>
+                                    </figure>`;
+        i++;
+        }
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
-    get[0].addEventListener("click",pair);
-    get[1].addEventListener("click",impair);
+    get[0].addEventListener("click", pair);
+    get[1].addEventListener("click", impair);
 });
 billes();
