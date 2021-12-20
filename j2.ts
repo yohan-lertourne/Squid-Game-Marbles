@@ -109,6 +109,7 @@ function billes() {
         i++;
         }
     }
+    tab1=[];
 }
 function colors(){
     let colors:any = document.getElementsByTagName("span");

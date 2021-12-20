@@ -83,7 +83,7 @@ function phasesJeu(phase) {
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "3");
-            const myTimeout = setTimeout(myGreeting, 3000);
+            const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
                 console.log("RIEN A FOUTRE");
                 window.localStorage.setItem("phase", "1");

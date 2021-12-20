@@ -64,7 +64,7 @@ function phasesJeu(phase: any) {
             spanStart[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
-            articles[0].innerHTML = "";
+            articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
                 figlist[i].addEventListener("click", function () {
@@ -92,7 +92,7 @@ function phasesJeu(phase: any) {
                                     </figure>`;
             window.localStorage.setItem('phase', "3");
 
-            const myTimeout = setTimeout(myGreeting, 3000);
+            const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
                 console.log("RIEN A FOUTRE");
                 window.localStorage.setItem("phase","1");
