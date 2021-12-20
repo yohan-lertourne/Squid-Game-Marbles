@@ -9,6 +9,21 @@
     font-family: 'Squid-Gamu';
     src: url('./assets/Game Of Squids.ttf');
 }
+::-webkit-scrollbar{
+    margin:0;
+    height:16px;
+    width:16px;
+    background:#d4d4d4;
+    border-radius:2em;
+}
+::-webkit-scrollbar-thumb{
+    background:var(--color3);
+    -webkit-border-radius:1ex;
+    -webkit-box-shadow:0 1px 2px var(--color5);
+}
+::-webkit-scrollbar-corner{
+    background:#000;
+}
 body{
     margin:0;
     color:white;
@@ -30,7 +45,7 @@ figure{
     border:3px solid var(--color5);
 }
 figure img{
-    animation: 1s infinite rotate;
+    animation: 2s infinite rotate;
     cursor: pointer;
     border: 2px solid white;
     border-radius: 50%;
@@ -103,6 +118,7 @@ article button:hover{
 }
 .startButton,span{
     position: absolute;
+    cursor:pointer;
     top: 0;
     bottom: 0;
     z-index: 1;
@@ -136,7 +152,7 @@ span{
     }
 }
 .startButton:hover{
-    animation:2s infinite forwards rotate;
+    animation:2s infinite rotate;
 }
 span{
     animation:2s infinite rotateReverse;
@@ -149,4 +165,7 @@ span{
 }
 .empty{
     display:none;
+}
+.full{
+    width:100%;
 }

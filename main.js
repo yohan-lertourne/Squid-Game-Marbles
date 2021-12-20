@@ -7,11 +7,12 @@ let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
 let articleWindow = document.getElementsByTagName("article");
+let spanStart = document.getElementsByTagName("span");
 // Initialisation du jeu
 function initPlayers() {
     let billes = 10;
     let initBille = 0;
-    let phase = 1;
+    let phase = 0;
     let tour = "j1";
     window.localStorage.setItem('nombreBillesJoueur1', billes);
     window.localStorage.setItem('nombreBillesJoueur2', billes);
@@ -24,18 +25,7 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")) {
 }
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
-    phasesJeu();
-    for (let i = 0; i < figcaptionlist.length; i++) {
-        figlist[i].addEventListener("click", function () {
-            window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-            varStor = window.localStorage.getItem("nombreBilles");
-            //document.write(varStor)
-            // Activation des boutons
-            buttonChoice[1].disabled = false;
-            buttonChoice[2].disabled = false;
-            phasesJeu(2);
-        });
-    }
+    phasesJeu("0");
 });
 // Inverser les joueurs
 function inverserJoueurs() {
@@ -51,25 +41,53 @@ function inverserJoueurs() {
     console.log(buttonChoice[0]);
 }
 // Switcher les phases de jeu
-function phasesJeu(phase = 1) {
-    ;
+function phasesJeu(phase) {
     switch (phase) {
-        case 1:
-            billes();
+        case "0":
+            getLocalStorage();
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            buttonChoice[0].addEventListener("click", function () {
+                buttonChoice[0].classList.add("empty");
+                spanStart[0].classList.add("empty");
+                articles[0].classList.remove("empty");
+                articles[1].classList.remove("empty");
+                phasesJeu("1");
+            });
             break;
-        case 2:
+        case "1":
+            articles[0].innerHTML = "";
+            billes();
+            for (let i = 0; i < figcaptionlist.length; i++) {
+                figlist[i].addEventListener("click", function () {
+                    window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+                    varStor = window.localStorage.getItem("nombreBilles");
+                    // Activation des boutons
+                    buttonChoice[1].disabled = false;
+                    buttonChoice[2].disabled = false;
+                    phasesJeu("2");
+                });
+            }
+            window.localStorage.setItem('phase', "1");
+            break;
+        case "2":
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
+            window.localStorage.setItem('phase', "2");
             break;
-        case 3:
+        case "3":
             let idImg = localStorage.getItem("nombreBilles");
-            console.log(idImg);
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
+            window.localStorage.setItem('phase', "3");
+            const myTimeout = setTimeout(myGreeting, 3000);
+            function myGreeting() {
+                console.log("RIEN A FOUTRE");
+                window.localStorage.setItem("phase", "1");
+                phasesJeu("1");
+            }
             break;
-        default:
-            console.log("Not exist...");
     }
 }

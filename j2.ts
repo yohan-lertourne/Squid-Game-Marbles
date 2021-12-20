@@ -1,6 +1,6 @@
 let joueur1: any;
 let joueur2: any;
-let number: any;
+let numberMarble: any;
 let get: any = document.getElementsByTagName("button");
 let actif: any = document.getElementsByTagName("h2");
 let articles: any = document.getElementsByTagName("article");
@@ -14,7 +14,7 @@ let section = document.getElementsByTagName("section");
 function getLocalStorage() {
     joueur1 = localStorage.getItem("nombreBillesJoueur1");
     joueur2 = localStorage.getItem("nombreBillesJoueur2");
-    number = localStorage.getItem("nombreBilles");
+    numberMarble = localStorage.getItem("nombreBilles");
 }
 
 function win() {
@@ -56,11 +56,11 @@ function lose() {
 }
 
 function pair() {
-    phasesJeu(3);
+    phasesJeu("3");
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
-    number2 = Number(number);
+    number2 = Number(numberMarble);
     if (number2 % 2 === 0) {
         win();
     }
@@ -70,11 +70,12 @@ function pair() {
 }
 
 function impair() {
-    phasesJeu(3);
+    phasesJeu("3");
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
-    number2 = Number(number);
+    number2 = Number(numberMarble);
+
     if (number2 % 2 === 0) {
         lose();
     }
@@ -127,5 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
     get[0].addEventListener("click", phasesJeu);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
+
 });
-//billes(); 
