@@ -8,6 +8,7 @@ let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
 let articleWindow = document.getElementsByTagName("article");
 let spanStart = document.getElementsByTagName("span");
+let h1 = document.getElementsByTagName("h1");
 // Initialisation du jeu
 function initPlayers() {
     let billes = 10;
