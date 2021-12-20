@@ -44,8 +44,8 @@ figure{
     border-radius: 2em;
     border:3px solid var(--color5);
 }
-figure img{
-    animation: 2s infinite rotate;
+.bille{
+    animation: .1s infinite rotate;
     cursor: pointer;
     border: 2px solid white;
     border-radius: 50%;
