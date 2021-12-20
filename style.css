@@ -195,9 +195,9 @@ span{
 }
 audio{
     position: relative;
-    bottom:.5em;
-    right:.4em;
-    padding:.3em;
+    bottom: 1.2em;
+    right: 1em;
+    padding: 1em;
 }
 .audio{
     position:absolute;
