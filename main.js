@@ -74,14 +74,14 @@ function phasesJeu(phase) {
             window.localStorage.setItem('phase', "1");
             break;
         case "2":
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
             break;
         case "3":
             let idImg = localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
             articles[0].classList.add("full");
