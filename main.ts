@@ -38,6 +38,8 @@ function inverserJoueurs(){
         titreJoueurs[1].innerHTML = "Joueur 2";
     }
 
+    buttonChoice[1].disabled = true;
+    buttonChoice[2].disabled = true;
     console.log(buttonChoice[0])
 }
 
