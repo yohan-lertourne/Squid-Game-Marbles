@@ -41,6 +41,9 @@ function phasesJeu(phase) {
     switch (phase) {
         case "0":
             getLocalStorage();
+            h1[0].classList.remove("empty");
+            buttonChoice[0].classList.remove("empty");
+            spanStart[0].classList.remove("empty");
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
