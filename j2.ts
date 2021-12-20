@@ -61,6 +61,7 @@ function pair() {
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
     number2 = Number(number);
+    console.log(number2);
     if (number2 % 2 === 0) {
         win();
     }
@@ -75,7 +76,7 @@ function impair() {
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
     number2 = Number(number);
-
+    console.log(number2)
     if (number2 % 2 === 0) {
         lose();
     }

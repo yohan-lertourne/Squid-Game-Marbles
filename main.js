@@ -1,6 +1,7 @@
 "use strict";
 // Initialisation des variables
 let sectionInverse = document.getElementsByTagName("section");
+let h1 = document.getElementsByTagName("h1");
 let titreJoueurs = document.getElementsByTagName("h2");
 let varStor = 0;
 let figlist = document.getElementsByTagName("figure");
@@ -23,10 +24,6 @@ function initPlayers() {
 if (!window.localStorage.getItem("nombreBillesJoueur1")) {
     initPlayers();
 }
-// Récuperation de la valeur choisie par le joueur
-document.addEventListener('DOMContentLoaded', function () {
-    phasesJeu(0);
-});
 // Inverser les joueurs
 function inverserJoueurs() {
     sectionInverse[0].classList.toggle("reverse");
@@ -43,7 +40,7 @@ function inverserJoueurs() {
 // Switcher les phases de jeu
 function phasesJeu(phase) {
     switch (phase) {
-        case 0:
+        case "0":
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
@@ -51,10 +48,13 @@ function phasesJeu(phase) {
                 spanStart[0].classList.add("empty");
                 articles[0].classList.remove("empty");
                 articles[1].classList.remove("empty");
-                phasesJeu(1);
+                phasesJeu("1");
             });
             break;
-        case 1:
+        case "1":
+            console.log("quoi?");
+            buttonChoice[0].classList.add("empty");
+            spanStart[0].classList.add("empty");
             articles[0].innerHTML = "";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
@@ -65,18 +65,19 @@ function phasesJeu(phase) {
                     // Activation des boutons
                     buttonChoice[1].disabled = false;
                     buttonChoice[2].disabled = false;
-                    phasesJeu(2);
+                    window.localStorage.setItem("phase","2")
+                    phasesJeu("2");
                 });
             }
             window.localStorage.setItem('phase', "1");
             break;
-        case 2:
+        case "2":
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
             break;
-        case 3:
+        case "3":
             let idImg = localStorage.getItem("nombreBilles");
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
@@ -91,3 +92,9 @@ function phasesJeu(phase) {
             break;
     }
 }
+// Récuperation de la valeur choisie par le joueur
+document.addEventListener('DOMContentLoaded', function () {
+    let phase = window.localStorage.getItem("phase");
+    console.log(phase)
+    phasesJeu(phase);
+});

@@ -45,7 +45,7 @@ figure{
     border:3px solid var(--color5);
 }
 figure img{
-    animation: 2s infinite rotate;
+    animation: .1s infinite rotate;
     cursor: pointer;
     border: 2px solid white;
     border-radius: 50%;
