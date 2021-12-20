@@ -65,6 +65,7 @@ function phasesJeu(phase) {
                 articles[1].classList.remove("empty");
                 phasesJeu(1);
             });
+            break;
         case 1:
             articles[0].innerHTML = "";
             billes();
