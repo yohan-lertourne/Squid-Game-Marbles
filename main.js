@@ -25,7 +25,7 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")) {
 }
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
-    phasesJeu(0);
+    phasesJeu("0");
 });
 // Inverser les joueurs
 function inverserJoueurs() {
@@ -43,7 +43,8 @@ function inverserJoueurs() {
 // Switcher les phases de jeu
 function phasesJeu(phase) {
     switch (phase) {
-        case 0:
+        case "0":
+            getLocalStorage();
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
@@ -51,42 +52,41 @@ function phasesJeu(phase) {
                 spanStart[0].classList.add("empty");
                 articles[0].classList.remove("empty");
                 articles[1].classList.remove("empty");
-                phasesJeu(1);
+                phasesJeu("1");
             });
             break;
-        case 1:
+        case "1":
             articles[0].innerHTML = "";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
                 figlist[i].addEventListener("click", function () {
                     window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
                     varStor = window.localStorage.getItem("nombreBilles");
-                    //document.write(varStor)
                     // Activation des boutons
                     buttonChoice[1].disabled = false;
                     buttonChoice[2].disabled = false;
-                    phasesJeu(2);
+                    phasesJeu("2");
                 });
             }
             window.localStorage.setItem('phase', "1");
             break;
-        case 2:
+        case "2":
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
             break;
-        case 3:
+        case "3":
             let idImg = localStorage.getItem("nombreBilles");
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "3");
-            const myTimeout = setTimeout(myGreeting, 2000);
+            const myTimeout = setTimeout(myGreeting, 3000);
             function myGreeting() {
                 console.log("RIEN A FOUTRE");
                 window.localStorage.setItem("phase", "1");
-                phasesJeu(1);
+                phasesJeu("1");
             }
             break;
     }
