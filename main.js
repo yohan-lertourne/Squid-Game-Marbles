@@ -48,14 +48,15 @@ function phasesJeu(phase) {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
-                buttonChoice[0].classList.add("empty");
-                spanStart[0].classList.add("empty");
-                articles[0].classList.remove("empty");
-                articles[1].classList.remove("empty");
                 phasesJeu("1");
             });
             break;
         case "1":
+            h1[0].classList.add("empty");
+            buttonChoice[0].classList.add("empty");
+            spanStart[0].classList.add("empty");
+            articles[0].classList.remove("empty");
+            articles[1].classList.remove("empty");
             articles[0].innerHTML = "";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {

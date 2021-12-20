@@ -49,32 +49,33 @@ function phasesJeu(phase: any) {
     switch (phase) {
         case "0":
             getLocalStorage();
+            h1[0].classList.remove("empty");
+            buttonChoice[0].classList.remove("empty");
+            spanStart[0].classList.remove("empty");
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
-                buttonChoice[0].classList.add("empty");
-                spanStart[0].classList.add("empty");
-                articles[0].classList.remove("empty");
-                articles[1].classList.remove("empty");
                 phasesJeu("1");
-            })
+            });
             break;
         case "1":
-            articles[0].innerHTML="";
-            
+            h1[0].classList.add("empty");
+            buttonChoice[0].classList.add("empty");
+            spanStart[0].classList.add("empty");
+            articles[0].classList.remove("empty");
+            articles[1].classList.remove("empty");
+            articles[0].innerHTML = "";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
                 figlist[i].addEventListener("click", function () {
                     window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-                    varStor = window.localStorage.getItem("nombreBilles")       
-       
+                    varStor = window.localStorage.getItem("nombreBilles");
                     // Activation des boutons
                     buttonChoice[1].disabled = false;
                     buttonChoice[2].disabled = false;
-               
                     phasesJeu("2");
-        
-            })}
+                });
+            }
             window.localStorage.setItem('phase', "1");
             break;
         case "2":
