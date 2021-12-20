@@ -53,7 +53,6 @@ function inverserJoueurs() {
 }
 // Switcher les phases de jeu
 function phasesJeu(phase) {
-    ;
     switch (phase) {
         case 0:
             articles[0].classList.add("empty");
