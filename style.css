@@ -45,13 +45,31 @@ figure{
     border:3px solid var(--color5);
 }
 .bille{
-    animation: .1s infinite rotate;
+    animation: 1s infinite rotate ease-in-out;
     cursor: pointer;
     border: 2px solid white;
     border-radius: 50%;
     height: 8em;
     width: 8em;
     background-color: wheat;
+}
+article figure:nth-child(2) img{
+    animation:1s infinite rotateReverse ease-in-out;
+}
+article figure:nth-child(4) img{
+    animation:1s infinite rotateReverse ease-in-out;
+}
+article figure:nth-child(6) img{
+    animation:1s infinite rotateReverse ease-in-out;
+}
+article figure:nth-child(8) img{
+    animation:1s infinite rotateReverse ease-in-out;
+}
+article figure:nth-child(10) img{
+    animation:1s infinite rotateReverse ease-in-out;
+}
+article figure:nth-child(12) img{
+    animation:1s infinite rotateReverse ease-in-out;
 }
 figcaption{
     position: relative;
@@ -142,13 +160,19 @@ span{
     padding:2em;
 }
 @keyframes rotate{
-    100%{
+    0%,10%{
+        transform: rotate(0deg);
+    }
+    90%,100%{
         transform: rotate(360deg);
     }
 }
 @keyframes rotateReverse{
-    100%{
-        transform: rotate(-360deg);
+    0%,10%{
+        -webkit-transform: rotate(0deg);
+    }
+    90%,100%{
+        -webkit-transform: rotate(-360deg);
     }
 }
 .startButton:hover{
