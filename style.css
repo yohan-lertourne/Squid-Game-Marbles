@@ -5,10 +5,14 @@
     --color4:#D95341;
     --color5:#e74553;
 }
+@font-face {
+    font-family: 'Squid-Gamu';
+    src: url('./assets/Game Of Squids.ttf');
+}
 body{
     margin:0;
     color:white;
-    font-family: sans-serif;
+    font-family: 'Squid-Gamu',sans-serif;
     overflow:hidden;
 }
 header{
@@ -51,6 +55,11 @@ figcaption:hover,figure:hover figcaption{
 h1{
     margin: 0;
     padding: 1em 0;
+    position:absolute;
+    z-index: 5;
+    margin-top:13.7em;
+    text-shadow: 2px 1px 2px rgb(247, 63, 88), 0 0 1em rgb(44, 109, 250), 0 0 0.2em rgb(0, 255, 179);
+    pointer-events: none;
 }
 section{
     position: absolute;
@@ -76,6 +85,7 @@ article{
     width:50%;
     background-color: var(--color5);
     overflow:auto;
+    overflow-x: hidden;
 }
 article h2{
     width:100%;
@@ -95,17 +105,18 @@ article button:hover{
     top: 0;
     bottom: 0;
     z-index: 1;
+    height:50em;
     width: 50em;
-    margin: 5%;
     background:linear-gradient(135deg, rgba(238,174,202,1) 49%, rgba(148,187,233,1) 50%);
     justify-content: center;
     border-radius: 50%;
+    margin: 3.5em;
     border:20px ridge var(--color5);
 }
 span{
     font-size: 4em;
     border-radius: 50%;
-    margin: 3.5em;
+    margin: 2.9em;
     z-index: 2;
     pointer-events: none;
     border: none;
