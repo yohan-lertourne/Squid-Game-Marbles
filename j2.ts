@@ -12,9 +12,9 @@ let tab1: any = [];
 let section = document.getElementsByTagName("section");
 
 function getLocalStorage() {
-    joueur1 = localStorage.getItem("nombreBillesJoueur1");
-    joueur2 = localStorage.getItem("nombreBillesJoueur2");
-    numberMarble = localStorage.getItem("nombreBilles");
+    joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
+    joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
+    numberMarble = window.localStorage.getItem("nombreBilles");
 }
 
 function win() {
@@ -103,7 +103,7 @@ function billes() {
         if (!bool){
         tab1.push(random);
         articles[0].innerHTML += ` <figure>
-                                        <img src="./assets/Billes/Bille-${random}.png" alt="">
+                                        <img class="bille" src="./assets/Billes/Bille-${random}.png" alt="">
                                         <figcaption>${i + 1}</figcaption>
                                     </figure>`;
         i++;
