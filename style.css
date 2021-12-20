@@ -42,11 +42,12 @@ figcaption{
     position: relative;
     cursor: pointer;
     bottom: 5.7em;
-    padding: 1em;
-    left: 32%;
-    background:black;
-    border:2px solid grey;
-    width:1em;
+    padding: 0.5em 1em 1em 1em;
+    left: 30%;
+    background: black;
+    border: 2px solid grey;
+    width: 1em;
+    height: 1em;
     border-radius: 2em;
 }
 figcaption:hover,figure:hover figcaption{
