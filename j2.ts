@@ -75,6 +75,7 @@ function impair() {
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
     number2 = Number(number);
+
     if (number2 % 2 === 0) {
         lose();
     }
