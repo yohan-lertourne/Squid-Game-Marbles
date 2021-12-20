@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Inverser les joueurs
 function inverserJoueurs(){
     sectionInverse[0].classList.toggle("reverse");
-    if (titreJoueurs[0].innerHTML=="Joueur 1"){
+    if (window.localStorage.getItem("tour")=="j1"){
         titreJoueurs[0].innerHTML = "Joueur 2";
         titreJoueurs[1].innerHTML = "Joueur 1";
     }
