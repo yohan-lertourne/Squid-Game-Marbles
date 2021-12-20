@@ -12,6 +12,7 @@ let joueur4: number;
 let number2: number;
 let tab1: any = [];
 let section = document.getElementsByTagName("section");
+let message:string;
 
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
@@ -28,16 +29,19 @@ function win() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J1 a gagné ${number2} billes.`
     }
     else if (tour1 == "j1") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
         alert("over");
     }
+    console.log(message);
 }
 
 function lose() {
@@ -47,16 +51,19 @@ function lose() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J1 a gagné ${number2} billes.`
     }
     else if (tour1 == "j2") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
         alert("over");
     }
+    console.log(message);
 }
 
 function pair() {
