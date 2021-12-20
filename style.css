@@ -95,7 +95,7 @@ article button:hover{
     top: 0;
     bottom: 0;
     z-index: 1;
-    width: 50%;
+    width: 50em;
     margin: 5%;
     background:linear-gradient(135deg, rgba(238,174,202,1) 49%, rgba(148,187,233,1) 50%);
     justify-content: center;
@@ -104,13 +104,14 @@ article button:hover{
 }
 span{
     font-size: 4em;
-    padding: 2em;
-    border-radius: 2em;
-    margin: 20%;
+    border-radius: 50%;
+    margin: 3.5em;
     z-index: 2;
     pointer-events: none;
     border: none;
-    width: 2em;
+    width:2em;
+    height:2em;
+    padding:2em;
 }
 @keyframes rotate{
     100%{
