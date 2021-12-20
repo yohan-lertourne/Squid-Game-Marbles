@@ -131,4 +131,3 @@ document.addEventListener('DOMContentLoaded', function () {
     get[2].addEventListener("click", impair);
 
 });
-//billes(); 

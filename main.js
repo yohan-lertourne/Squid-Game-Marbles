@@ -26,17 +26,6 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")) {
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
     phasesJeu(0);
-    for (let i = 0; i < figcaptionlist.length; i++) {
-        figlist[i].addEventListener("click", function () {
-            window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-            varStor = window.localStorage.getItem("nombreBilles");
-            //document.write(varStor)
-            // Activation des boutons
-            buttonChoice[1].disabled = false;
-            buttonChoice[2].disabled = false;
-            phasesJeu(2);
-        });
-    }
 });
 // Inverser les joueurs
 function inverserJoueurs() {
@@ -68,6 +57,17 @@ function phasesJeu(phase) {
         case 1:
             articles[0].innerHTML = "";
             billes();
+            for (let i = 0; i < figcaptionlist.length; i++) {
+                figlist[i].addEventListener("click", function () {
+                    window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+                    varStor = window.localStorage.getItem("nombreBilles");
+                    //document.write(varStor)
+                    // Activation des boutons
+                    buttonChoice[1].disabled = false;
+                    buttonChoice[2].disabled = false;
+                    phasesJeu(2);
+                });
+            }
             window.localStorage.setItem('phase', "1");
             break;
         case 2:
@@ -85,9 +85,8 @@ function phasesJeu(phase) {
             const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
                 console.log("RIEN A FOUTRE");
-                //window.location.reload();
-                //window.localStorage.setItem("phase","1");
-                //phasesJeu(1);
+                window.localStorage.setItem("phase", "1");
+                phasesJeu(1);
             }
             break;
     }
