@@ -7,7 +7,7 @@ let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
 let articleWindow = document.getElementsByTagName("article");
 let spanStart = document.getElementsByTagName("span");
-
+let h1 = document.getElementsByTagName("h1");
 
 
 
@@ -49,6 +49,9 @@ function phasesJeu(phase: any) {
     switch (phase) {
         case "0":
             getLocalStorage();
+            h1[0].classList.remove("empty");
+            buttonChoice[0].classList.remove("empty");
+            spanStart[0].classList.remove("empty");
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
