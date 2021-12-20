@@ -96,7 +96,7 @@ function billes() {
         if (!bool) {
             tab1.push(random);
             articles[0].innerHTML += ` <figure>
-                                        <img src="./assets/Billes/Bille-${random}.png" alt="">
+                                        <img class="bille" src="./assets/Billes/Bille-${random}.png" alt="">
                                         <figcaption>${i + 1}</figcaption>
                                     </figure>`;
             i++;

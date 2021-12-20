@@ -57,7 +57,7 @@ function phasesJeu(phase) {
             spanStart[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
-            articles[0].innerHTML = "";
+            articles[0].innerHTML = "<h2>Joueur 1</h2>";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
                 figlist[i].addEventListener("click", function () {
