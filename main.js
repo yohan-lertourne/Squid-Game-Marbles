@@ -41,6 +41,7 @@ function inverserJoueurs() {
 function phasesJeu(phase) {
     switch (phase) {
         case "0":
+            getLocalStorage();
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
@@ -52,20 +53,15 @@ function phasesJeu(phase) {
             });
             break;
         case "1":
-            console.log("quoi?");
-            buttonChoice[0].classList.add("empty");
-            spanStart[0].classList.add("empty");
             articles[0].innerHTML = "";
             billes();
             for (let i = 0; i < figcaptionlist.length; i++) {
                 figlist[i].addEventListener("click", function () {
                     window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
                     varStor = window.localStorage.getItem("nombreBilles");
-                    //document.write(varStor)
                     // Activation des boutons
                     buttonChoice[1].disabled = false;
                     buttonChoice[2].disabled = false;
-                    window.localStorage.setItem("phase","2")
                     phasesJeu("2");
                 });
             }
@@ -83,11 +79,11 @@ function phasesJeu(phase) {
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "3");
-            const myTimeout = setTimeout(myGreeting, 2000);
+            const myTimeout = setTimeout(myGreeting, 3000);
             function myGreeting() {
                 console.log("RIEN A FOUTRE");
                 window.localStorage.setItem("phase", "1");
-                phasesJeu(1);
+                phasesJeu("1");
             }
             break;
     }
