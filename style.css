@@ -9,6 +9,21 @@
     font-family: 'Squid-Gamu';
     src: url('./assets/Game Of Squids.ttf');
 }
+::-webkit-scrollbar{
+    margin:0;
+    height:16px;
+    width:16px;
+    background:#d4d4d4;
+    border-radius:2em;
+}
+::-webkit-scrollbar-thumb{
+    background:var(--color3);
+    -webkit-border-radius:1ex;
+    -webkit-box-shadow:0 1px 2px var(--color5);
+}
+::-webkit-scrollbar-corner{
+    background:#000;
+}
 body{
     margin:0;
     color:white;
