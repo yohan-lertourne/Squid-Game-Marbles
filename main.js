@@ -1,7 +1,6 @@
 "use strict";
 // Initialisation des variables
 let sectionInverse = document.getElementsByTagName("section");
-let h1 = document.getElementsByTagName("h1");
 let titreJoueurs = document.getElementsByTagName("h2");
 let varStor = 0;
 let figlist = document.getElementsByTagName("figure");
@@ -91,6 +90,6 @@ function phasesJeu(phase) {
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
     let phase = window.localStorage.getItem("phase");
-    console.log(phase)
+    console.log(phase);
     phasesJeu(phase);
 });

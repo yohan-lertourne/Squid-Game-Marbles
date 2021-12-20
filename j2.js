@@ -68,7 +68,6 @@ function pair() {
 function impair() {
     phasesJeu("3");
     getLocalStorage();
-    console.log(number2)
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
     number2 = Number(numberMarble);
