@@ -90,11 +90,14 @@ function phasesJeu(phase: any) {
             articles[0].innerHTML = ` <figure>
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
+
+            articles[0].classList.add("full");
+            articles[1].classList.add("empty");
+
             window.localStorage.setItem('phase', "3");
 
             const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
-                console.log("RIEN A FOUTRE");
                 window.localStorage.setItem("phase","1");
                 phasesJeu("1");
                 inverserJoueurs();
