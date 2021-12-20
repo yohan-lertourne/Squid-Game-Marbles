@@ -108,14 +108,19 @@ function colors() {
     let r = Math.floor(Math.random() * 255);
     let g = Math.floor(Math.random() * 255);
     let b = Math.floor(Math.random() * 255);
-    colors[0].style.background = `rgb(${r},${g},${b})`;
-    get[0].style.background = `rgb(${r},${g},${b})`;
+    let rng1 = ` rgb(${r},${g},${b})`;
+    r = Math.floor(Math.random() * 255);
+    g = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * 255);
+    let rng2 = `rgb(${r},${g},${b})`;
+    colors[0].style.background = `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
+    get[0].style.background = `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
 }
-setInterval(colors, 1000);
+setInterval(colors, 2000);
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
     get[0].addEventListener("click", phasesJeu);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
 });
-//billes();
+//billes(); 
