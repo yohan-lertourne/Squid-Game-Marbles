@@ -89,6 +89,7 @@ function phasesJeu(phase) {
                 window.localStorage.setItem("phase", "1");
                 phasesJeu("1");
             }
+            inverserJoueurs();
             break;
     }
 }
