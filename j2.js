@@ -14,6 +14,8 @@ let number2;
 let tab1 = [];
 let section = document.getElementsByTagName("section");
 let message;
+let rand = Math.floor((Math.random() * (10)) + 1);
+let randString;
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
@@ -156,3 +158,25 @@ document.addEventListener('DOMContentLoaded', function () {
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
 });
+function bot() {
+    getLocalStorage();
+    setInterval(function () {
+        switch (tour) {
+            case "j1":
+                if (rand < 5) {
+                    pair();
+                }
+                else {
+                    impair();
+                }
+                break;
+            case "j2":
+                randString = rand.toString;
+                window.localStorage.setItem('nombreBilles', randString);
+                varStor = window.localStorage.getItem("nombreBilles");
+                phasesJeu("2");
+                break;
+        }
+        ;
+    }, 4000);
+}

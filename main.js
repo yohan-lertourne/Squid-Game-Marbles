@@ -105,6 +105,5 @@ function phasesJeu(phase) {
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
     let phase = window.localStorage.getItem("phase");
-    console.log(phase);
     phasesJeu(phase);
 });
