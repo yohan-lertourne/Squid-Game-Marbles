@@ -102,7 +102,7 @@ function billes() {
     let random;
     let bool;
     if (tour1 == "j2") {
-        while (tab1.length < joueur3) {
+        while (tab1.length < joueur4) {
             bool = false;
             random = Math.floor(Math.random() * 56) + 1;
             for (let j = 0; j < tab1.length; j++) {
@@ -121,7 +121,7 @@ function billes() {
         }
     }
     else if (tour1 == "j1") {
-        while (tab1.length < joueur4) {
+        while (tab1.length < joueur3) {
             bool = false;
             random = Math.floor(Math.random() * 56) + 1;
             for (let j = 0; j < tab1.length; j++) {

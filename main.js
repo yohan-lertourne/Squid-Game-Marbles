@@ -28,7 +28,7 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")) {
 // Inverser les joueurs
 function inverserJoueurs() {
     sectionInverse[0].classList.toggle("reverse");
-    if (tour1 == "j1") {
+    if (tour1 == "j2") {
         titreJoueurs[0].innerHTML = "Joueur 2";
         titreJoueurs[1].innerHTML = "Joueur 1";
     }
