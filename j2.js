@@ -158,10 +158,11 @@ document.addEventListener('DOMContentLoaded', function () {
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
 });
+randString = rand.toString();
 function bot() {
     getLocalStorage();
-    setInterval(function () {
-        switch (tour) {
+    setTimeout(function () {
+        switch (tour1) {
             case "j1":
                 if (rand < 5) {
                     pair();
@@ -169,14 +170,17 @@ function bot() {
                 else {
                     impair();
                 }
+                console.log("j1");
                 break;
             case "j2":
-                randString = rand.toString;
                 window.localStorage.setItem('nombreBilles', randString);
                 varStor = window.localStorage.getItem("nombreBilles");
                 phasesJeu("2");
+                console.log("j2");
                 break;
         }
         ;
     }, 4000);
 }
+console.log(rand);
+console.log(randString);

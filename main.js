@@ -61,15 +61,32 @@ function phasesJeu(phase) {
             articles[1].classList.remove("empty");
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
-            for (let i = 0; i < figcaptionlist.length; i++) {
-                figlist[i].addEventListener("click", function () {
-                    window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-                    varStor = window.localStorage.getItem("nombreBilles");
-                    // Activation des boutons
-                    buttonChoice[1].disabled = false;
-                    buttonChoice[2].disabled = false;
-                    phasesJeu("2");
-                });
+            // for (let i = 0; i < figcaptionlist.length; i++) {
+            //     figlist[i].addEventListener("click", function () {
+            //         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+            //         varStor = window.localStorage.getItem("nombreBilles");
+            //         // Activation des boutons
+            //         buttonChoice[1].disabled = false;
+            //         buttonChoice[2].disabled = false;
+            //         phasesJeu("2");
+            //     });
+            // }
+            if (tour1 == "j2") {
+                bot();
+                buttonChoice[1].disabled = false;
+                buttonChoice[2].disabled = false;
+            }
+            else {
+                for (let i = 0; i < figcaptionlist.length; i++) {
+                    figlist[i].addEventListener("click", function () {
+                        window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+                        varStor = window.localStorage.getItem("nombreBilles");
+                        // Activation des boutons
+                        buttonChoice[1].disabled = false;
+                        buttonChoice[2].disabled = false;
+                        phasesJeu("2");
+                    });
+                }
             }
             window.localStorage.setItem('phase', "1");
             break;
@@ -78,6 +95,11 @@ function phasesJeu(phase) {
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
+            if (tour1 == "j1") {
+                bot();
+            }
+            else {
+            }
             break;
         case "3":
             let idImg = localStorage.getItem("nombreBilles");
