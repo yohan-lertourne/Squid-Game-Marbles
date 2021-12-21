@@ -59,6 +59,7 @@ function phasesJeu(phase: any) {
             });
             break;
         case "1":
+            getLocalStorage();
             h1[0].classList.add("empty");
             buttonChoice[0].classList.add("empty");
             spanStart[0].classList.add("empty");
