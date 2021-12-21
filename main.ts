@@ -79,7 +79,7 @@ function phasesJeu(phase: any) {
             window.localStorage.setItem('phase', "1");
             break;
         case "2":
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
@@ -87,7 +87,7 @@ function phasesJeu(phase: any) {
         case "3":
 
             let idImg: any=localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
 
@@ -115,6 +115,5 @@ function phasesJeu(phase: any) {
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
     let phase = window.localStorage.getItem("phase");
-    console.log(phase)
     phasesJeu(phase);
 });

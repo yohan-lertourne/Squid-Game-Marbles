@@ -13,6 +13,8 @@ let number2: number;
 let tab1: any = [];
 let section = document.getElementsByTagName("section");
 let message:string;
+let rand: number = Math.floor((Math.random() * (10)) +1 );
+let randString: any;
 
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
@@ -164,3 +166,25 @@ document.addEventListener('DOMContentLoaded', function () {
     get[2].addEventListener("click", impair);
 
 });
+
+function bot() {
+    getLocalStorage();
+    setInterval(function() {
+        switch (tour){
+            case "j1":
+                if (rand<5){
+                    pair();
+                }
+                else {
+                    impair();
+                }
+                break;
+            case "j2":
+                randString = rand.toString;
+                window.localStorage.setItem('nombreBilles', randString);
+                varStor = window.localStorage.getItem("nombreBilles");
+                phasesJeu("2");
+                break;
+        };
+    }, 4000);
+}
