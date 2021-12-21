@@ -59,6 +59,7 @@ function phasesJeu(phase: any) {
             });
             break;
         case "1":
+            getLocalStorage();
             h1[0].classList.add("empty");
             buttonChoice[0].classList.add("empty");
             spanStart[0].classList.add("empty");
@@ -66,15 +67,32 @@ function phasesJeu(phase: any) {
             articles[1].classList.remove("empty");
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
-            for (let i = 0; i < figcaptionlist.length; i++) {
-                figlist[i].addEventListener("click", function () {
-                    window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-                    varStor = window.localStorage.getItem("nombreBilles");
-                    // Activation des boutons
-                    buttonChoice[1].disabled = false;
-                    buttonChoice[2].disabled = false;
-                    phasesJeu("2");
-                });
+            // for (let i = 0; i < figcaptionlist.length; i++) {
+            //     figlist[i].addEventListener("click", function () {
+            //         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+            //         varStor = window.localStorage.getItem("nombreBilles");
+            //         // Activation des boutons
+            //         buttonChoice[1].disabled = false;
+            //         buttonChoice[2].disabled = false;
+            //         phasesJeu("2");
+            //     });
+            // }
+            if (tour1 == "j2"){
+                bot();
+                buttonChoice[1].disabled = false;
+                buttonChoice[2].disabled = false;
+            }
+            else {
+                for (let i = 0; i < figcaptionlist.length; i++) {
+                    figlist[i].addEventListener("click", function () {
+                        window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
+                        varStor = window.localStorage.getItem("nombreBilles");
+                        // Activation des boutons
+                        buttonChoice[1].disabled = false;
+                        buttonChoice[2].disabled = false;
+                        phasesJeu("2");
+                    });
+                }
             }
             window.localStorage.setItem('phase', "1");
             break;
@@ -97,15 +115,21 @@ function phasesJeu(phase: any) {
                 }
                 break;
         case "2":
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
+            if (tour1 == "j1"){
+                bot();
+            }
+            else {
+
+            }
             break;
         case "3":
 
             let idImg: any=localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = ` <figure>
+            articles[0].innerHTML = ` <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
 
@@ -126,13 +150,11 @@ function phasesJeu(phase: any) {
                     window.localStorage.setItem('tour', "j1");
                 }
             }
-
             break;
     }
 }
 // Récuperation de la valeur choisie par le joueur
 document.addEventListener('DOMContentLoaded', function () {
     let phase = window.localStorage.getItem("phase");
-    console.log(phase)
     phasesJeu(phase);
 });

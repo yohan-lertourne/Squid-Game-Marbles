@@ -13,10 +13,16 @@
     <header></header>
     <main>
         <section>
-            <button class="startButton empty"></button>
-            <span class="empty"></span>
-            <h1 class="empty">Play</h1>
-            <audio src="./assets/squid-game-tone.mp3" loop autoplay></audio>
+            <div class="start">
+                <button class="startButton empty"></button>
+                <span class="empty"></span>
+                <h1 class="empty">Play</h1>
+                <input type="button" value="1 Joueur">
+                <input type="button" value="2 Joueurs">
+            </div>
+            <div class="audio">
+                <audio src="./assets/8-Bit-Squid.mp3" loop autoplay controls></audio>
+            </div>
             <article class="empty">
                 <h2>Joueur 1</h2>
             </article>
@@ -28,7 +34,12 @@
         </section>
     </main>
     <footer>
-
+        <div class="over empty">
+            <figure>
+                <figcaption>Ton Gganbu est condamne</figcaption>
+                <img src="./assets/Gganbu.png" alt="">
+            </figure>
+        </div>
     </footer>
 </body>
 </html>
