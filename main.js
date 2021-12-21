@@ -9,6 +9,7 @@ let buttonChoice = document.getElementsByTagName("button");
 let articleWindow = document.getElementsByTagName("article");
 let spanStart = document.getElementsByTagName("span");
 let h1 = document.getElementsByTagName("h1");
+let start = document.getElementsByClassName("start");
 let billes1 = 10;
 let initBille = 0;
 let phase = 0;
@@ -44,9 +45,7 @@ function phasesJeu(phase) {
     switch (phase) {
         case "0":
             getLocalStorage();
-            h1[0].classList.remove("empty");
-            buttonChoice[0].classList.remove("empty");
-            spanStart[0].classList.remove("empty");
+            start[0].classList.remove("empty");
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
@@ -54,9 +53,7 @@ function phasesJeu(phase) {
             });
             break;
         case "1":
-            h1[0].classList.add("empty");
-            buttonChoice[0].classList.add("empty");
-            spanStart[0].classList.add("empty");
+            start[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
@@ -90,22 +87,26 @@ function phasesJeu(phase) {
             }
             window.localStorage.setItem('phase', "1");
             break;
-        case "2":
-            articles[0].innerHTML = ` <figure class="box">
-                                        <img src="./assets/closedBox.png" alt="">
-                                    </figure>`;
-            window.localStorage.setItem('phase', "2");
-            if (tour1 == "j1" && ordi == "true") {
-                bot();
-            }
-            else {
-            }
-            break;
-        case "3":
-            let idImg = localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = ` <figure class="box">
-                                        <img src="./assets/openedBox-${idImg}.png" alt="">
-                                    </figure>`;
+            case "2":
+                articles[0].innerHTML = `<h2>Joueur 1</h2>
+                                        <figure class="box">
+                                            <img src="./assets/closedBox.png" alt="">
+                                        </figure>`;
+                window.localStorage.setItem('phase', "2");
+                if (tour1 == "j1" && ordi == "true"){
+                    bot();
+                }
+                else {
+    
+                }
+                break;
+                case "3":
+    
+                let idImg=localStorage.getItem("nombreBilles");
+                articles[0].innerHTML = `<h2>Le joueur N gagne N billes</h2>
+                                        <figure class="box">
+                                            <img src="./assets/openedBox-${idImg}.png" alt="">
+                                        </figure>`;
             articles[0].classList.add("full");
             articles[1].classList.add("empty");
             window.localStorage.setItem('phase', "3");

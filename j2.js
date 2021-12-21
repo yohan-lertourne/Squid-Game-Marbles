@@ -43,7 +43,7 @@ function win() {
         message = `J1 a gagné ${number2} billes.`;
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
-        alert("over");
+        window.localStorage.clear;
     }
     console.log(message);
 }
@@ -64,7 +64,7 @@ function lose() {
         message = `J1 a gagné ${number2} billes.`;
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
-        alert("over");
+        window.localStorage.clear;
     }
     console.log(message);
 }

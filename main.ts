@@ -8,6 +8,7 @@ let buttonChoice = document.getElementsByTagName("button");
 let articleWindow = document.getElementsByTagName("article");
 let spanStart = document.getElementsByTagName("span");
 let h1 = document.getElementsByTagName("h1");
+let start = document.getElementsByClassName("start");
 let billes1 : any = 10;
 let initBille:any= 0;
 let phase:any = 0;
@@ -49,9 +50,7 @@ function phasesJeu(phase: any) {
     switch (phase) {
         case "0":
             getLocalStorage();
-            h1[0].classList.remove("empty");
-            buttonChoice[0].classList.remove("empty");
-            spanStart[0].classList.remove("empty");
+            start[0].classList.remove("empty");
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
@@ -59,9 +58,7 @@ function phasesJeu(phase: any) {
             });
             break;
         case "1":
-            h1[0].classList.add("empty");
-            buttonChoice[0].classList.add("empty");
-            spanStart[0].classList.add("empty");
+            start[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
@@ -97,7 +94,8 @@ function phasesJeu(phase: any) {
             break;
            
             case "2":
-            articles[0].innerHTML = ` <figure class="box">
+            articles[0].innerHTML = `<h2>Joueur 1</h2>
+                                    <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
@@ -111,7 +109,8 @@ function phasesJeu(phase: any) {
             case "3":
 
             let idImg: any=localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = ` <figure class="box">
+            articles[0].innerHTML = `<h2>Le joueur N gagne N billes</h2>
+                                    <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
 
