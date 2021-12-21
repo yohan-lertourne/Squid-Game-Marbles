@@ -59,7 +59,6 @@ function phasesJeu(phase: any) {
             });
             break;
         case "1":
-            getLocalStorage();
             h1[0].classList.add("empty");
             buttonChoice[0].classList.add("empty");
             spanStart[0].classList.add("empty");
@@ -67,6 +66,8 @@ function phasesJeu(phase: any) {
             articles[1].classList.remove("empty");
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
+            getLocalStorage();
+            console.log(tour1);
             // for (let i = 0; i < figcaptionlist.length; i++) {
             //     figlist[i].addEventListener("click", function () {
             //         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
@@ -77,10 +78,8 @@ function phasesJeu(phase: any) {
             //         phasesJeu("2");
             //     });
             // }
-            if (tour1 == "j2"){
+            if (tour1 == "j2" && ordi == "true"){
                 bot();
-                buttonChoice[1].disabled = false;
-                buttonChoice[2].disabled = false;
             }
             else {
                 for (let i = 0; i < figcaptionlist.length; i++) {
@@ -102,7 +101,7 @@ function phasesJeu(phase: any) {
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
-            if (tour1 == "j1"){
+            if (tour1 == "j1" && ordi == "true"){
                 bot();
             }
             else {
@@ -121,17 +120,18 @@ function phasesJeu(phase: any) {
 
             window.localStorage.setItem('phase', "3");
 
+            if (tour1 == "j1"){
+                window.localStorage.setItem('tour', "j2");
+            }
+            else if (tour1 == "j2"){
+                window.localStorage.setItem('tour', "j1");
+            }
+            getLocalStorage();
             const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
                 window.localStorage.setItem("phase","1");
                 phasesJeu("1");
                 inverserJoueurs();
-                if (tour1 == "j1"){
-                    window.localStorage.setItem('tour', "j2");
-                }
-                else if (tour1 == "j2"){
-                    window.localStorage.setItem('tour', "j1");
-                }
             }
             break;
     }

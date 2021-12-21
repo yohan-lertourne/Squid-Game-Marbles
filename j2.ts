@@ -15,6 +15,8 @@ let section = document.getElementsByTagName("section");
 let message:string;
 let rand: number = Math.floor((Math.random() * (10)) +1 );
 let randString: string;
+let ordi:any;
+let input: any = document.getElementsByTagName("input");
 
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
@@ -22,23 +24,24 @@ function getLocalStorage() {
     numberMarble = window.localStorage.getItem("nombreBilles");
     phase1 = window.localStorage.getItem("phase");
     tour1 = window.localStorage.getItem("tour");
+    ordi = window.localStorage.getItem("bot");
 }
 
 function win() {
     getLocalStorage();
     if (tour1 == "j2") {
-        joueur3 += number2;
-        joueur4 -= number2;
-        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
-        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
-    }
-    else if (tour1 == "j1") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
         message = `J2 a gagné ${number2} billes.`
+    }
+    else if (tour1 == "j1") {
+        joueur3 += number2;
+        joueur4 -= number2;
+        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
+        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J1 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
         alert("over");
@@ -49,18 +52,18 @@ function win() {
 function lose() {
     getLocalStorage();
     if (tour1 == "j1") {
-        joueur3 += number2;
-        joueur4 -= number2;
-        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
-        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
-    }
-    else if (tour1 == "j2") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
         message = `J2 a gagné ${number2} billes.`
+    }
+    else if (tour1 == "j2") {
+        joueur3 += number2;
+        joueur4 -= number2;
+        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
+        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `J1 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
         alert("over");
@@ -163,8 +166,18 @@ document.addEventListener('DOMContentLoaded', function () {
     get[0].addEventListener("click", phasesJeu);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
+    input[0].addEventListener("click", withBot);
+    input[1].addEventListener("click", withoutBot);
 
 });
+function withBot(){ 
+    window.localStorage.setItem("bot","true");
+
+}
+function withoutBot(){ 
+    window.localStorage.setItem("bot","false");
+
+}
 randString = rand.toString();
 function bot() {
     getLocalStorage();
@@ -184,7 +197,9 @@ function bot() {
                 console.log("j1")
                 break;
             case "j2":
-                rand= Math.floor((Math.random() * (10)) +1 );
+                joueur3 = Number(joueur1);
+                joueur4 = Number(joueur2);
+                rand= Math.floor((Math.random() * (joueur4)) +1 );
                 randString = rand.toString();
                 console.log(rand)
                 console.log(randString)
@@ -192,6 +207,8 @@ function bot() {
                 varStor = window.localStorage.getItem("nombreBilles");
                 phasesJeu("2");
                 console.log("j2")
+                buttonChoice[1].disabled = false;
+                buttonChoice[2].disabled = false;
                 break;
         };
     }, 4000);
