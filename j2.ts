@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function bot() {
     getLocalStorage();
     setInterval(function() {
-        switch (tour){
+        switch (tour1){
             case "j1":
                 if (rand<5){
                     pair();
