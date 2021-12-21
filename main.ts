@@ -107,9 +107,9 @@ function phasesJeu(phase: any) {
             }
             break;
             case "3":
-
             let idImg: any=localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = `<h2>Le joueur N gagne N billes</h2>
+            
+            articles[0].innerHTML = `<h2>${message}</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
