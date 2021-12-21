@@ -1,14 +1,17 @@
+/*COULEURS*/
 :root{
     --color1:#F8AB4A;
     --color2:#D98041;
     --color3:#F07E53;
     --color4:#D95341;
-    --color5:#e74553;
+    --color5:#d74552;
 }
+/*FONTS*/
 @font-face {
     font-family: 'Squid-Gamu';
     src: url('./assets/Game Of Squids.ttf');
 }
+/*SCROLLBARS*/
 ::-webkit-scrollbar{
     margin:0;
     height:16px;
@@ -24,12 +27,14 @@
 ::-webkit-scrollbar-corner{
     background:#000;
 }
+/*BASE*/
 body{
     margin:0;
     color:white;
     font-family: 'Squid-Gamu',sans-serif;
     overflow:hidden;
 }
+/*FOND*/
 header{
     background: url(./assets/logo.gif);
     background-size: 9em;
@@ -39,7 +44,68 @@ header{
     text-align: center;
     height:6.3em;
 }
-figure{
+/***********************/
+/******BOUTON PLAY*****/
+/*********************/
+.startButton,span{
+    position: absolute;
+    cursor:pointer;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    height:50em;
+    width: 50em;
+    background:linear-gradient(135deg, rgb(160, 32, 87) 49%, rgb(20, 66, 119) 50%);
+    justify-content: center;
+    border-radius: 50%;
+    margin: 3.5em;
+    border:20px ridge var(--color5);
+}
+.start{
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    text-align: center;
+    background: rgba(63, 63, 63, 0.9);
+    background-position: center;
+}
+span{
+    font-size: 4em;
+    border-radius: 50%;
+    margin: 2.9em;
+    z-index: 2;
+    pointer-events: none;
+    border: none;
+    width:2em;
+    height:2em;
+    padding:2em;
+}
+input{
+    font-family: 'Squid-Gamu',sans-serif;
+    cursor: pointer;
+    margin:27em;
+    width:10em;
+    height:4em;
+    background:rgba(63, 63, 63, 0.9);
+    border-radius: 2em;
+    padding:1em;
+    text-shadow: 2px 1px 2px rgb(247, 63, 88), 0 0 1em rgb(44, 109, 250), 0 0 0.2em rgb(0, 255, 179);
+    color:white;
+}
+input:hover{
+    background:linear-gradient(135deg, var(--color5),var(--color1));
+}
+.select{
+    background:linear-gradient(135deg, var(--color5),var(--color1));
+}
+/************************/
+/********ARTICLE********/
+/**********************/
+article figure{
     margin: auto 0;
     border-radius: 2em;
     border:3px solid var(--color5);
@@ -71,7 +137,7 @@ article figure:nth-child(10) img{
 article figure:nth-child(12) img{
     animation:1s infinite rotateReverse ease-in-out;
 }
-figcaption{
+article figcaption{
     position: relative;
     cursor: pointer;
     bottom: 5.7em;
@@ -83,15 +149,14 @@ figcaption{
     height: 1em;
     border-radius: 2em;
 }
-figcaption:hover,figure:hover figcaption{
+article figcaption:hover,article figure:hover figcaption{
     border:2px solid var(--color5);
 }
 h1{
-    margin: 0;
     padding: 1em 0;
     position:absolute;
     z-index: 5;
-    margin-top:13.7em;
+    margin:14em;
     text-shadow: 2px 1px 2px rgb(247, 63, 88), 0 0 1em rgb(44, 109, 250), 0 0 0.2em rgb(0, 255, 179);
     pointer-events: none;
 }
@@ -133,31 +198,6 @@ article button{
 }
 article button:hover{
     border:2px solid var(--color3);
-}
-.startButton,span{
-    position: absolute;
-    cursor:pointer;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    height:50em;
-    width: 50em;
-    background:linear-gradient(135deg, rgba(238,174,202,1) 49%, rgba(148,187,233,1) 50%);
-    justify-content: center;
-    border-radius: 50%;
-    margin: 3.5em;
-    border:20px ridge var(--color5);
-}
-span{
-    font-size: 4em;
-    border-radius: 50%;
-    margin: 2.9em;
-    z-index: 2;
-    pointer-events: none;
-    border: none;
-    width:2em;
-    height:2em;
-    padding:2em;
 }
 @keyframes rotate{
     0%,10%{
@@ -208,4 +248,24 @@ audio{
     background: white;
     height: 3em;
     border-radius: 50%;
+    z-index:7;
+}
+.over{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 5;
+}
+.over figure,.over img{
+    margin:0;
+    width: 100%;
+    height: -webkit-fill-available;
+}
+.over figcaption{
+    left:40%;
+    top:1.5em;
+    position: absolute;
+    z-index:6;
 }
