@@ -47,6 +47,12 @@ function win() {
     }
     if (joueur3 <= 0) {
         if (ordi == "true") {
+            audio.pause();
+            let sound = new Audio("./assets/psyko_14.mp3");
+            setTimeout(function(){
+                sound.pause();
+            },6300);
+            sound.play();
             over[0].classList.remove("empty");
             img2.setAttribute("src", "./assets/Psycho-Dedax.png");
             figCap[0].innerHTML = "Psykokwak a gagné";
@@ -90,6 +96,12 @@ function lose() {
     }
     if (joueur3 <= 0) {
         if (ordi == "true") {
+            audio.pause();
+            let sound = new Audio("./assets/psyko_14.mp3");
+            setTimeout(function(){
+                sound.pause();
+            },6500);
+            sound.play();
             over[0].classList.remove("empty");
             img2.setAttribute("src", "./assets/Psycho-Dedax.png");
             figCap[0].innerHTML = "Psykokwak a gagné";
