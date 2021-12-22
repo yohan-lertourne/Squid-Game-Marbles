@@ -6,6 +6,7 @@ let tour1:any;
 let get: any = document.getElementsByTagName("button");
 let actif: any = document.getElementsByTagName("h2");
 let articles: any = document.getElementsByTagName("article");
+let figCap = document.getElementsByTagName("figcaption");
 let test: string = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
@@ -30,49 +31,72 @@ function getLocalStorage() {
 function win() {
     getLocalStorage();
     if (tour1 == "j2") {
-        joueur3 -= number2;
-        joueur4 += number2;
-        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
-        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J2 a gagné ${number2} billes.`
-    }
-    else if (tour1 == "j1") {
         joueur3 += number2;
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
+        message = `Joueur 1 a gagné ${number2} billes.`
     }
-    if (joueur3 <= 0 || joueur4 <= 0) {
-        window.localStorage.clear;
+    else if (tour1 == "j1") {
+        joueur3 -= number2;
+        joueur4 += number2;
+        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
+        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `Joueur 2 a gagné ${number2} billes.`
     }
-    console.log(message);
+    if (joueur3 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "Joueur 2 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+        
+    }
+    else if (joueur4 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "Joueur 1 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+    }
+    phasesJeu("3");
 }
 
 function lose() {
     getLocalStorage();
     if (tour1 == "j1") {
-        joueur3 -= number2;
-        joueur4 += number2;
-        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
-        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J2 a gagné ${number2} billes.`
-    }
-    else if (tour1 == "j2") {
         joueur3 += number2;
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
+        message = `Joueur 1 a gagné ${number2} billes.`
     }
-    if (joueur3 <= 0 || joueur4 <= 0) {
-        window.localStorage.clear;
+    else if (tour1 == "j2") {
+        joueur3 -= number2;
+        joueur4 += number2;
+        localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
+        localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
+        message = `Joueur 2 a gagné ${number2} billes.`
     }
-    console.log(message);
+    if (joueur3 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "Joueur 2 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+        
+    }
+    else if (joueur4 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "Joueur 1 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+    }
+    phasesJeu("3");
 }
 
 function pair() {
-    phasesJeu("3");
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
@@ -86,7 +110,6 @@ function pair() {
 }
 
 function impair() {
-    phasesJeu("3");
     getLocalStorage();
     joueur3 = Number(joueur1);
     joueur4 = Number(joueur2);
@@ -172,12 +195,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function withBot(){ 
     window.localStorage.setItem("bot","true");
-
+    input[0].classList.add('select');
+    input[1].classList.remove('select');
+    get[0].disabled = false;
 }
 function withoutBot(){ 
     window.localStorage.setItem("bot","false");
-
+    input[1].classList.add('select');
+    input[0].classList.remove('select');
+    get[0].disabled = false;
 }
+
 randString = rand.toString();
 function bot() {
     getLocalStorage();
