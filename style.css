@@ -110,33 +110,47 @@ article figure{
     border-radius: 2em;
     border:3px solid var(--color5);
 }
+/************************************/
+/*************BILLES****************/
+/**********************************/
 .bille{
-    animation: 1s infinite rotate ease-in-out;
+    animation: 1s infinite rotate ease-in-out forwards;
     cursor: pointer;
     border: 2px solid white;
     border-radius: 50%;
     height: 8em;
     width: 8em;
     background-color: wheat;
+    opacity: 1;
 }
-article figure:nth-child(2) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+article figure:nth-child(even) .bille{
+    animation: 1s infinite rotateReverse ease-in-out forwards;
 }
-article figure:nth-child(4) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+.anim1{
+    animation: .6s infinite rotate ease-in-out forwards;
 }
-article figure:nth-child(6) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+article figure:nth-child(even) .anim1{
+    animation: .6s infinite rotateReverse ease-in-out forwards;
 }
-article figure:nth-child(8) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+.anim2{
+    animation: .3s infinite rotate ease-in-out forwards;
 }
-article figure:nth-child(10) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+article figure:nth-child(even) .anim2{
+    animation: .3s infinite rotateReverse ease-in-out forwards;
 }
-article figure:nth-child(12) .bille{
-    animation:1s infinite rotateReverse ease-in-out;
+.anim3{
+    animation: .1s infinite rotate ease-in-out forwards;
 }
+article figure:nth-child(even) .anim3{
+    animation: .1s infinite rotateReverse ease-in-out forwards;
+}
+.anim4{
+    animation: 4s infinite rotate ease-in-out forwards;
+}
+article figure:nth-child(even) .anim4{
+    animation: 4s infinite rotateReverse ease-in-out forwards;
+}
+/*****************************/
 article figcaption{
     position: relative;
     cursor: pointer;
