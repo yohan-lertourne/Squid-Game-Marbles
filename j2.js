@@ -45,14 +45,14 @@ function win() {
     }
     if (joueur3 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "J2 a gagné";
+        figCap[0].innerHTML = "Joueur 2 a gagné";
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "J1 a gagné";
+        figCap[0].innerHTML = "Joueur 1 a gagné";
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
