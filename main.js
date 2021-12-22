@@ -188,13 +188,8 @@ function phasesJeu(phase) {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
-                getLocalStorage();
                 phasesJeu("1");
                 audio.play();
-                if (ordi == "true") {
-                    psyko[0].classList.remove("empty");
-                    console.log(ordi);
-                }
             });
             break;
         case "1":
@@ -204,7 +199,7 @@ function phasesJeu(phase) {
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
             getLocalStorage();
-            if (tour1 == "j2" && ordi == "true") {
+            if (tour1 == "j2" && ordi == "true"){
                 bot();
             }
             else {
@@ -213,53 +208,63 @@ function phasesJeu(phase) {
                         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
                         varStor = window.localStorage.getItem("nombreBilles");
                         // Activation des boutons
-                        buttonChoice[1].disabled = false;
-                        buttonChoice[2].disabled = false;
+                        if(window.localStorage.getItem("bot")=="false" || window.localStorage.getItem("tour")=="j2"){
+                            buttonChoice[1].disabled = false;
+                            buttonChoice[2].disabled = false;
+                        }
                         phasesJeu("2");
                     });
                 }
             }
             window.localStorage.setItem('phase', "1");
             break;
+           
         case "2":
             let temp = localStorage.getItem("tour");
             let titreTemp;
-            if (temp == "j1") {
-                titreTemp = "Joueur 1";
+
+            if (temp=="j1"){
+                titreTemp="Joueur 1";
             }
-            else {
-                titreTemp = "Joueur 2";
+            else{
+                titreTemp="Joueur 2";
             }
+
             articles[0].innerHTML = `<h2>${titreTemp}</h2>
                                     <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
             window.localStorage.setItem('phase', "2");
-            if (tour1 == "j1" && ordi == "true") {
+            if (tour1 == "j1" && ordi == "true"){
                 bot();
             }
             else {
+
             }
             break;
         case "3":
             let idImg = localStorage.getItem("nombreBilles");
+                        
             articles[0].innerHTML = `<h2>${message}</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
+
             articles[0].classList.add("full");
             articles[1].classList.add("empty");
+
             window.localStorage.setItem('phase', "3");
-            if (tour1 == "j1") {
+
+            if (tour1 == "j1"){
                 window.localStorage.setItem('tour', "j2");
             }
-            else if (tour1 == "j2") {
+            else if (tour1 == "j2"){
                 window.localStorage.setItem('tour', "j1");
             }
             getLocalStorage();
             const myTimeout = setTimeout(myGreeting, 2000);
             function myGreeting() {
-                window.localStorage.setItem("phase", "1");
+                window.localStorage.setItem("phase","1");
                 phasesJeu("1");
                 inverserJoueurs();
             }
