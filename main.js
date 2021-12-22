@@ -188,6 +188,7 @@ function phasesJeu(phase) {
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
                 phasesJeu("1");
+                audio.play();
             });
             break;
         case "1":
