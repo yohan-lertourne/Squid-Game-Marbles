@@ -19,7 +19,6 @@ let tour: any = "j1";
 let audio:any = document.getElementById("audio");
 setInterval(function () {
     let audioTime = audio.currentTime;
-    console.log(audio.currentTime)
     if (audioTime > 19 && audioTime < 28.7) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim1");
