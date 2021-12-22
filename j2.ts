@@ -210,6 +210,9 @@ function withoutBot(){
 randString = rand.toString();
 function bot() {
     getLocalStorage();
+    let img:any =psyko[0].getElementsByTagName("img");
+    img[0].setAttribute("src", "./assets/psykokwak.png")
+    psyko[0].classList.add("psy");
     setTimeout(function() {
         switch (tour1){
             case "j1":
@@ -234,5 +237,6 @@ function bot() {
                 buttonChoice[2].disabled = false;
                 break;
         };
+        img[0].setAttribute("src", "./assets/psykokwak-2.png")
     }, 2000);
 }

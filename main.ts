@@ -192,8 +192,13 @@ function phasesJeu(phase: any) {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
+                getLocalStorage();
                 phasesJeu("1");
                 audio.play();
+                if (ordi == "true") {
+                    psyko[0].classList.remove("empty");
+                    console.log(ordi)
+                }
             });
             break;
         case "1":
