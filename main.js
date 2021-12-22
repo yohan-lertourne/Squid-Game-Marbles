@@ -18,142 +18,141 @@ let phase = 0;
 let tour = "j1";
 /*AUDIO*/
 let audio = document.getElementById("audio");
-setInterval(function(){
-console.log(audio.currentTime)
-let audioTime = audio.currentTime;
-if(audioTime>19 && audioTime<28){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim1");
+setInterval(function () {
+    let audioTime = audio.currentTime;
+    if (audioTime > 19 && audioTime < 28) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim1");
+        }
     }
-}
-else if(audioTime>28 && audioTime<38){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim2");
+    else if (audioTime > 28 && audioTime < 38) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim2");
+        }
     }
-}
-else if(audioTime>38 && audioTime<49){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim3");
+    else if (audioTime > 38 && audioTime < 49) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim3");
+        }
     }
-}
-else if(audioTime>49 && audioTime<54){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.remove("anim3");
+    else if (audioTime > 49 && audioTime < 54) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.remove("anim3");
+        }
     }
-}
-else if(audioTime>54 && audioTime<55){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim3");
+    else if (audioTime > 54 && audioTime < 55) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim3");
+        }
     }
-}
-//LOOP 55
-else if(audioTime>55.3 && audioTime<55.7){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    //LOOP 55
+    else if (audioTime > 55.3 && audioTime < 55.7) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>56.6 && audioTime<57){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 56.6 && audioTime < 57) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>57.9 && audioTime<58.3){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 57.9 && audioTime < 58.3) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>59.2 && audioTime<59.5){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 59.2 && audioTime < 59.5) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>60.5 && audioTime<60.9){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 60.5 && audioTime < 60.9) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>61.8 && audioTime<62.2){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 61.8 && audioTime < 62.2) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>63.1 && audioTime<63.5){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 63.1 && audioTime < 63.5) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>64.4 && audioTime<64.8){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 64.4 && audioTime < 64.8) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-//LOOP 80 || audioTime==83 || audioTime==84.1 || audioTime==85.2 || audioTime==86.3 || audioTime==87.4 || audioTime==88.5
-else if(audioTime>81.9 && audioTime<82.3){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    //LOOP 80 || audioTime==83 || audioTime==84.1 || audioTime==85.2 || audioTime==86.3 || audioTime==87.4 || audioTime==88.5
+    else if (audioTime > 81.9 && audioTime < 82.3) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>83.2 && audioTime<83.6){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 83.2 && audioTime < 83.6) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>84.5 && audioTime<84.9){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 84.5 && audioTime < 84.9) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>85.8 && audioTime<86.2){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 85.8 && audioTime < 86.2) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>87.1 && audioTime<87.5){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 87.1 && audioTime < 87.5) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>88.4 && audioTime<88.8){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 88.4 && audioTime < 88.8) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>89.7 && audioTime<90.1){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 89.7 && audioTime < 90.1) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>91 && audioTime<91.4){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 91 && audioTime < 91.4) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else if(audioTime>102 && audioTime<104){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.remove("anim3");
+    else if (audioTime > 102 && audioTime < 104) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.remove("anim3");
+        }
     }
-}
-else if(audioTime>108 && audioTime<110){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.remove("anim2");
+    else if (audioTime > 108 && audioTime < 110) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.remove("anim2");
+        }
     }
-}
-else if(audioTime>112 && audioTime<114){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.remove("anim1");
+    else if (audioTime > 112 && audioTime < 114) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.remove("anim1");
+        }
     }
-}
-else if(audioTime>120 && audioTime<124){
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.add("anim4");
+    else if (audioTime > 120 && audioTime < 124) {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.add("anim4");
+        }
     }
-}
-else{
-    for(let i = 0;i<marbles.length;i++){
-        marbles[i].classList.remove("anim4");
+    else {
+        for (let i = 0; i < marbles.length; i++) {
+            marbles[i].classList.remove("anim4");
+        }
     }
-}
-}),3000;
+}), 3000;
 // Initialisation du jeu
 function initPlayers() {
     window.localStorage.setItem('nombreBillesJoueur1', billes1);
@@ -178,7 +177,6 @@ function inverserJoueurs() {
     }
     buttonChoice[1].disabled = true;
     buttonChoice[2].disabled = true;
-    console.log(buttonChoice[0]);
 }
 // Switcher les phases de jeu
 function phasesJeu(phase) {
@@ -190,7 +188,6 @@ function phasesJeu(phase) {
             articles[1].classList.add("empty");
             buttonChoice[0].addEventListener("click", function () {
                 phasesJeu("1");
-                audio.play();
             });
             break;
         case "1":
@@ -200,7 +197,6 @@ function phasesJeu(phase) {
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
             getLocalStorage();
-            console.log(tour1);
             if (tour1 == "j2" && ordi == "true") {
                 bot();
             }

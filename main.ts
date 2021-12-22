@@ -18,7 +18,6 @@ let tour: any = "j1";
 /*AUDIO*/
 let audio:any = document.getElementById("audio");
 setInterval(function(){
-console.log(audio.currentTime)
 let audioTime = audio.currentTime;
 if(audioTime>19 && audioTime<28){
     for(let i = 0;i<marbles.length;i++){
@@ -180,7 +179,6 @@ function inverserJoueurs(){
 
     buttonChoice[1].disabled = true;
     buttonChoice[2].disabled = true;
-    console.log(buttonChoice[0])
 }
 
 
@@ -203,7 +201,6 @@ function phasesJeu(phase: any) {
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
             getLocalStorage();
-            console.log(tour1);
             if (tour1 == "j2" && ordi == "true"){
                 bot();
             }
