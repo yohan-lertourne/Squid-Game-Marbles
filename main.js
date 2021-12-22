@@ -265,6 +265,4 @@ function phasesJeu(phase) {
 document.addEventListener('DOMContentLoaded', function () {
     let phase = window.localStorage.getItem("phase");
     phasesJeu(phase);
-    //audio.playbackRate = .3;
-    //audio.currentTime = 80;
 });
