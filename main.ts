@@ -194,6 +194,9 @@ function phasesJeu(phase: any) {
             buttonChoice[0].addEventListener("click", function () {
                 phasesJeu("1");
                 audio.play();
+                if (ordi == "true") {
+                    psyko[0].classList.remove("empty");
+                }
             });
             break;
         case "1":
