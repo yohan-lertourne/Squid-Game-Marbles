@@ -89,7 +89,15 @@ function phasesJeu(phase) {
             window.localStorage.setItem('phase', "1");
             break;
         case "2":
-            articles[0].innerHTML = `<h2>Joueur 1</h2>
+            let temp = localStorage.getItem("tour");
+            let titreTemp;
+            if (temp == "j1") {
+                titreTemp = "Joueur 1";
+            }
+            else {
+                titreTemp = "Joueur 2";
+            }
+            articles[0].innerHTML = `<h2>${titreTemp}</h2>
                                     <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
@@ -102,7 +110,8 @@ function phasesJeu(phase) {
             break;
         case "3":
             let idImg = localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = `<h2>${message}</h2>
+            //console.log(localStorage.getItem("nombreBilles"))
+            articles[0].innerHTML = `<h2>a gagné ${idImg} billes</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;

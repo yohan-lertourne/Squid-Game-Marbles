@@ -49,7 +49,7 @@ function win() {
         articles[1].classList.add("empty");
         window.localStorage.clear();
     }
-    console.log(message);
+    //console.log(message);
 }
 
 function lose() {
@@ -74,7 +74,7 @@ function lose() {
         articles[1].classList.add("empty");
         window.localStorage.clear();
     }
-    console.log(message);
+    //console.log(message);
 }
 
 function pair() {
@@ -185,7 +185,9 @@ function withoutBot(){
     window.localStorage.setItem("bot","false");
     input[1].classList.add('select');
     input[0].classList.remove('select');
+    get[0].disabled = false;
 }
+
 randString = rand.toString();
 function bot() {
     getLocalStorage();
