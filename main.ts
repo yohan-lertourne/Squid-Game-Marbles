@@ -14,6 +14,7 @@ let initBille:any= 0;
 let phase:any = 0;
 let tour: any = "j1";
 
+
 // Initialisation du jeu
 function initPlayers(){
     window.localStorage.setItem('nombreBillesJoueur1', billes1);
@@ -93,8 +94,18 @@ function phasesJeu(phase: any) {
             window.localStorage.setItem('phase', "1");
             break;
            
-            case "2":
-            articles[0].innerHTML = `<h2>Joueur 1</h2>
+        case "2":
+            let temp: any= localStorage.getItem("tour");
+            let titreTemp: any;
+
+            if (temp=="j1"){
+                titreTemp="Joueur 1";
+            }
+            else{
+                titreTemp="Joueur 2";
+            }
+
+            articles[0].innerHTML = `<h2>${titreTemp}</h2>
                                     <figure class="box">
                                         <img src="./assets/closedBox.png" alt="">
                                     </figure>`;
@@ -106,10 +117,13 @@ function phasesJeu(phase: any) {
 
             }
             break;
-            case "3":
+        case "3":
             let idImg: any=localStorage.getItem("nombreBilles");
             
-            articles[0].innerHTML = `<h2>${message}</h2>
+            //console.log(localStorage.getItem("nombreBilles"))
+
+            
+            articles[0].innerHTML = `<h2>a gagné ${idImg} billes</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;

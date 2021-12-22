@@ -46,7 +46,7 @@ function win() {
     if (joueur3 <= 0 || joueur4 <= 0) {
         window.localStorage.clear;
     }
-    console.log(message);
+    //console.log(message);
 }
 
 function lose() {
@@ -68,7 +68,7 @@ function lose() {
     if (joueur3 <= 0 || joueur4 <= 0) {
         window.localStorage.clear;
     }
-    console.log(message);
+    //console.log(message);
 }
 
 function pair() {
@@ -172,11 +172,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function withBot(){ 
     window.localStorage.setItem("bot","true");
-
+    get[0].disabled = false;
 }
 function withoutBot(){ 
     window.localStorage.setItem("bot","false");
-
+    get[0].disabled = false;
 }
 randString = rand.toString();
 function bot() {
