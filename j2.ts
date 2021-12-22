@@ -6,6 +6,7 @@ let tour1:any;
 let get: any = document.getElementsByTagName("button");
 let actif: any = document.getElementsByTagName("h2");
 let articles: any = document.getElementsByTagName("article");
+let figCap = document.getElementsByTagName("figcaption");
 let test: string = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
@@ -43,8 +44,17 @@ function win() {
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
         message = `J2 a gagné ${number2} billes.`
     }
-    if (joueur3 <= 0 || joueur4 <= 0) {
+    if (joueur3 <= 0) {
         over[0].classList.remove("empty");
+        figCap[0].innerHTML = "J2 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+        
+    }
+    else if (joueur4 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "J1 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
@@ -68,8 +78,17 @@ function lose() {
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
         message = `J2 a gagné ${number2} billes.`
     }
-    if (joueur3 <= 0 || joueur4 <= 0) {
+    if (joueur3 <= 0) {
         over[0].classList.remove("empty");
+        figCap[0].innerHTML = "J2 a gagné"
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
+        
+    }
+    else if (joueur4 <= 0) {
+        over[0].classList.remove("empty");
+        figCap[0].innerHTML = "J1 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
