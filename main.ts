@@ -197,7 +197,6 @@ function phasesJeu(phase: any) {
                 audio.play();
                 if (ordi == "true") {
                     psyko[0].classList.remove("empty");
-                    console.log(ordi)
                 }
             });
             break;
