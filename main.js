@@ -61,16 +61,6 @@ function phasesJeu(phase) {
             billes();
             getLocalStorage();
             console.log(tour1);
-            // for (let i = 0; i < figcaptionlist.length; i++) {
-            //     figlist[i].addEventListener("click", function () {
-            //         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
-            //         varStor = window.localStorage.getItem("nombreBilles");
-            //         // Activation des boutons
-            //         buttonChoice[1].disabled = false;
-            //         buttonChoice[2].disabled = false;
-            //         phasesJeu("2");
-            //     });
-            // }
             if (tour1 == "j2" && ordi == "true") {
                 bot();
             }
@@ -110,7 +100,6 @@ function phasesJeu(phase) {
             break;
         case "3":
             let idImg = localStorage.getItem("nombreBilles");
-            //console.log(localStorage.getItem("nombreBilles"))
             articles[0].innerHTML = `<h2>a gagné ${idImg} billes</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">

@@ -49,7 +49,6 @@ function win() {
         articles[1].classList.add("empty");
         window.localStorage.clear();
     }
-    //console.log(message);
 }
 
 function lose() {
@@ -74,7 +73,6 @@ function lose() {
         articles[1].classList.add("empty");
         window.localStorage.clear();
     }
-    //console.log(message);
 }
 
 function pair() {
