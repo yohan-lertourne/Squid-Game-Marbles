@@ -46,11 +46,20 @@ function win() {
         message = `Joueur 2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0) {
+        if (ordi == "true"){
+            over[0].classList.remove("empty");
+            figCap[0].innerHTML = "Psykokwak a gagné"
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+        }
+        else if(ordi == "false") {
         over[0].classList.remove("empty");
         figCap[0].innerHTML = "Joueur 2 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        }
         
     }
     else if (joueur4 <= 0) {
@@ -80,11 +89,20 @@ function lose() {
         message = `Joueur 2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0) {
+        if (ordi == "true"){
+            over[0].classList.remove("empty");
+            figCap[0].innerHTML = "Psykokwak a gagné"
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+        }
+        else if(ordi == "false"){
         over[0].classList.remove("empty");
         figCap[0].innerHTML = "Joueur 2 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        }
         
     }
     else if (joueur4 <= 0) {
