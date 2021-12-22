@@ -44,7 +44,10 @@ function win() {
         message = `J1 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
-        window.localStorage.clear;
+        over[0].classList.remove("empty");
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
     }
     console.log(message);
 }
@@ -66,7 +69,10 @@ function lose() {
         message = `J1 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0 || joueur4 <= 0) {
-        window.localStorage.clear;
+        over[0].classList.remove("empty");
+        articles[0].classList.add("empty");
+        articles[1].classList.add("empty");
+        window.localStorage.clear();
     }
     console.log(message);
 }

@@ -10,6 +10,7 @@ let articleWindow = document.getElementsByTagName("article");
 let spanStart = document.getElementsByTagName("span");
 let h1 = document.getElementsByTagName("h1");
 let start = document.getElementsByClassName("start");
+let over = document.getElementsByClassName("over");
 let billes1 = 10;
 let initBille = 0;
 let phase = 0;
