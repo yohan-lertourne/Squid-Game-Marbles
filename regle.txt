@@ -1,0 +1,14 @@
+Règles du Jeu:
+
+Vous pouvez choisir de jouer contre un bot (mode 1 Joueur) ou à 2 (mode 2 Joueurs). Cliquez ensuite sur le bouton Play.
+
+Une fois la partie lancée, le Joueur 1 choisit combien de billes il veut parier. Pour cela, rien de plus simple: appuyer sur la bille avec le numéro correspond au nombre de billes voulues.
+
+Le tour du joueur 2 se déclenche alors. Celui-ci doit choisir s'il pense que le nombre de billes dans votre main est un nombre pair ou impair. 
+S'il gagne, alors il remporte le nombre de billes que le joueur 1 avait dans sa main. Dans l'autre cas, il doit donner au joueur 1 ce même nombre de billes.
+
+Le tour de jeu finit, on inverse les rôles: c'est au joueur 2 de choisir le nombre de billes et au joueur 1 de deviner si c'est pair ou impair.
+
+La partie se termine lorsque le nombre de billes d'un joueur tombe à 0: ce joueur a donc perdu.
+
+Si vous jouez contre le bot, sélectionnez le nombre de billes, puis quand c'est une étape que le bot doit effectué, attendez qu'il choisisse avant de jouer.

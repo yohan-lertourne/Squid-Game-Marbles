@@ -193,6 +193,9 @@ function phasesJeu(phase: any) {
             buttonChoice[0].addEventListener("click", function () {
                 phasesJeu("1");
                 audio.play();
+                if (ordi == "true") {
+                    psyko[0].classList.remove("empty");
+                }
             });
             break;
         case "1":
@@ -211,8 +214,10 @@ function phasesJeu(phase: any) {
                         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
                         varStor = window.localStorage.getItem("nombreBilles");
                         // Activation des boutons
-                        buttonChoice[1].disabled = false;
-                        buttonChoice[2].disabled = false;
+                        if(window.localStorage.getItem("bot")=="false" || window.localStorage.getItem("tour")=="j2"){
+                            buttonChoice[1].disabled = false;
+                            buttonChoice[2].disabled = false;
+                        }
                         phasesJeu("2");
                     });
                 }

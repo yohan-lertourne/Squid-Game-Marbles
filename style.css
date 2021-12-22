@@ -29,6 +29,7 @@
 }
 /*BASE*/
 body{
+    transition:1s all;
     margin:0;
     color:white;
     font-family: 'Squid-Gamu',sans-serif;
@@ -205,6 +206,7 @@ article h2{
 }
 article button{
     color:white;
+    cursor:pointer;
     background-color: rgba(66, 66, 66, 0.753);
     border-radius: 2em;
     padding:.5em;
@@ -283,4 +285,19 @@ audio{
     top:1.5em;
     position: absolute;
     z-index:6;
+}
+.psy{
+    position: absolute;
+    width: 4em;
+    right: 0;
+    top: -6em;
+    background-color: white;
+    border-radius: 2em;
+    z-index: 16;
+    height: 4em;
+    margin: 1em;
+    overflow: hidden;
+}
+.psy img{
+    width: 100%;
 }
