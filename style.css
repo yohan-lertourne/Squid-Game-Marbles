@@ -296,3 +296,6 @@ audio{
     margin: 1em;
     overflow: hidden;
 }
+.psy img{
+    width: 100%;
+}
