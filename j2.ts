@@ -214,27 +214,21 @@ function bot() {
             case "j1":
                 rand= Math.floor((Math.random() * (10)) +1 );
                 randString = rand.toString();
-                console.log(rand)
-                console.log(randString)
                 if (rand<5){
                     pair();
                 }
                 else {
                     impair();
                 }
-                console.log("j1")
                 break;
             case "j2":
                 joueur3 = Number(joueur1);
                 joueur4 = Number(joueur2);
                 rand= Math.floor((Math.random() * (joueur4)) +1 );
                 randString = rand.toString();
-                console.log(rand)
-                console.log(randString)
                 window.localStorage.setItem('nombreBilles', randString);
                 varStor = window.localStorage.getItem("nombreBilles");
                 phasesJeu("2");
-                console.log("j2")
                 buttonChoice[1].disabled = false;
                 buttonChoice[2].disabled = false;
                 break;

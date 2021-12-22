@@ -179,7 +179,6 @@ function inverserJoueurs(){
 
     buttonChoice[1].disabled = true;
     buttonChoice[2].disabled = true;
-    console.log(buttonChoice[0])
 }
 
 
@@ -202,7 +201,6 @@ function phasesJeu(phase: any) {
             articles[0].innerHTML = `<h2>Joueur 1</h2>`;
             billes();
             getLocalStorage();
-            console.log(tour1);
             if (tour1 == "j2" && ordi == "true"){
                 bot();
             }
