@@ -20,53 +20,53 @@ let tour = "j1";
 let audio = document.getElementById("audio");
 setInterval(function () {
     let audioTime = audio.currentTime;
-    if (audioTime > 19 && audioTime < 28) {
+    if (audioTime > 19 && audioTime < 28.7) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim1");
         }
     }
-    else if (audioTime > 28 && audioTime < 38) {
+    else if (audioTime > 28.7 && audioTime < 38.4) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim2");
         }
     }
-    else if (audioTime > 38 && audioTime < 49) {
+    else if (audioTime > 38.4 && audioTime < 49.2) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim3");
         }
     }
-    else if (audioTime > 49 && audioTime < 54) {
+    else if (audioTime > 49.2 && audioTime < 54.3) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.remove("anim3");
         }
     }
-    else if (audioTime > 54 && audioTime < 55) {
+    else if (audioTime > 54.3 && audioTime < 55) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim3");
         }
     }
     //LOOP 55
-    else if (audioTime > 55.3 && audioTime < 55.7) {
+    else if (audioTime > 54.9 && audioTime < 55.3) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 56.6 && audioTime < 57) {
+    else if (audioTime > 56.3 && audioTime < 56.7) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 57.9 && audioTime < 58.3) {
+    else if (audioTime > 57.7 && audioTime < 58.1) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 59.2 && audioTime < 59.5) {
+    else if (audioTime > 59.1 && audioTime < 59.5) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 60.5 && audioTime < 60.9) {
+    else if (audioTime > 60.4 && audioTime < 60.8) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
@@ -76,53 +76,53 @@ setInterval(function () {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 63.1 && audioTime < 63.5) {
+    else if (audioTime > 63.2 && audioTime < 63.6) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 64.4 && audioTime < 64.8) {
+    else if (audioTime > 64.6 && audioTime < 65) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
     //LOOP 80 || audioTime==83 || audioTime==84.1 || audioTime==85.2 || audioTime==86.3 || audioTime==87.4 || audioTime==88.5
-    else if (audioTime > 81.9 && audioTime < 82.3) {
+    else if (audioTime > 81.7 && audioTime < 82.1) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 83.2 && audioTime < 83.6) {
+    else if (audioTime > 83 && audioTime < 83.4) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 84.5 && audioTime < 84.9) {
+    else if (audioTime > 84.3 && audioTime < 84.7) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 85.8 && audioTime < 86.2) {
+    else if (audioTime > 85.6 && audioTime < 86) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 87.1 && audioTime < 87.5) {
+    else if (audioTime > 86.9 && audioTime < 87.3) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 88.4 && audioTime < 88.8) {
+    else if (audioTime > 88.2 && audioTime < 88.6) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 89.7 && audioTime < 90.1) {
+    else if (audioTime > 89.5 && audioTime < 89.9) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
     }
-    else if (audioTime > 91 && audioTime < 91.4) {
+    else if (audioTime > 90.8 && audioTime < 91.2) {
         for (let i = 0; i < marbles.length; i++) {
             marbles[i].classList.add("anim4");
         }
@@ -189,6 +189,9 @@ function phasesJeu(phase) {
             buttonChoice[0].addEventListener("click", function () {
                 phasesJeu("1");
                 audio.play();
+                if (ordi == "true") {
+                    psyko[0].classList.remove("empty");
+                }
             });
             break;
         case "1":
@@ -207,8 +210,10 @@ function phasesJeu(phase) {
                         window.localStorage.setItem('nombreBilles', figcaptionlist[i].innerHTML);
                         varStor = window.localStorage.getItem("nombreBilles");
                         // Activation des boutons
-                        buttonChoice[1].disabled = false;
-                        buttonChoice[2].disabled = false;
+                        if (window.localStorage.getItem("bot") == "false" || window.localStorage.getItem("tour") == "j2") {
+                            buttonChoice[1].disabled = false;
+                            buttonChoice[2].disabled = false;
+                        }
                         phasesJeu("2");
                     });
                 }

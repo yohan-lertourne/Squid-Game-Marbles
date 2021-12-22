@@ -19,6 +19,8 @@ let rand = Math.floor((Math.random() * (10)) + 1);
 let randString;
 let ordi;
 let input = document.getElementsByTagName("input");
+let psyko = document.getElementsByTagName("div");
+let img2 = document.querySelector("footer img");
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
@@ -44,11 +46,28 @@ function win() {
         message = `Joueur 2 a gagné ${number2} billes.`;
     }
     if (joueur3 <= 0) {
-        over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 2 a gagné";
-        articles[0].classList.add("empty");
-        articles[1].classList.add("empty");
-        window.localStorage.clear();
+        if (ordi == "true") {
+            audio.pause();
+            let sound = new Audio("./assets/psyko_14.mp3");
+            setTimeout(function () {
+                sound.pause();
+            }, 6300);
+            sound.play();
+            over[0].classList.remove("empty");
+            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            figCap[0].innerHTML = "Psykokwak a gagné";
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+            console.log(img2);
+        }
+        else if (ordi == "false") {
+            over[0].classList.remove("empty");
+            figCap[0].innerHTML = "Joueur 2 a gagné";
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+        }
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
@@ -76,11 +95,27 @@ function lose() {
         message = `Joueur 2 a gagné ${number2} billes.`;
     }
     if (joueur3 <= 0) {
-        over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 2 a gagné";
-        articles[0].classList.add("empty");
-        articles[1].classList.add("empty");
-        window.localStorage.clear();
+        if (ordi == "true") {
+            audio.pause();
+            let sound = new Audio("./assets/psyko_14.mp3");
+            setTimeout(function () {
+                sound.pause();
+            }, 6300);
+            sound.play();
+            over[0].classList.remove("empty");
+            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            figCap[0].innerHTML = "Psykokwak a gagné";
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+        }
+        else if (ordi == "false") {
+            over[0].classList.remove("empty");
+            figCap[0].innerHTML = "Joueur 2 a gagné";
+            articles[0].classList.add("empty");
+            articles[1].classList.add("empty");
+            window.localStorage.clear();
+        }
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
@@ -199,6 +234,9 @@ function withoutBot() {
 randString = rand.toString();
 function bot() {
     getLocalStorage();
+    let img = psyko[0].getElementsByTagName("img");
+    img[0].setAttribute("src", "./assets/psykokwak.png");
+    psyko[0].classList.add("psy");
     setTimeout(function () {
         switch (tour1) {
             case "j1":
@@ -224,5 +262,6 @@ function bot() {
                 break;
         }
         ;
+        img[0].setAttribute("src", "./assets/psykokwak-2.png");
     }, 2000);
 }
