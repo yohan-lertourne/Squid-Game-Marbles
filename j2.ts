@@ -18,6 +18,7 @@ let rand: number = Math.floor((Math.random() * (10)) +1 );
 let randString: string;
 let ordi:any;
 let input: any = document.getElementsByTagName("input");
+let psyko: any = document.getElementsByTagName("div");
 
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
@@ -233,5 +234,5 @@ function bot() {
                 buttonChoice[2].disabled = false;
                 break;
         };
-    }, 4000);
+    }, 2000);
 }

@@ -19,6 +19,7 @@ let rand = Math.floor((Math.random() * (10)) + 1);
 let randString;
 let ordi;
 let input = document.getElementsByTagName("input");
+let psyko = document.getElementsByTagName("div");
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
@@ -224,5 +225,5 @@ function bot() {
                 break;
         }
         ;
-    }, 4000);
+    }, 2000);
 }
