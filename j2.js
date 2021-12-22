@@ -20,6 +20,7 @@ let randString;
 let ordi;
 let input = document.getElementsByTagName("input");
 let psyko = document.getElementsByTagName("div");
+let img2 = document.querySelector("footer img");
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
@@ -47,10 +48,12 @@ function win() {
     if (joueur3 <= 0) {
         if (ordi == "true") {
             over[0].classList.remove("empty");
+            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
             figCap[0].innerHTML = "Psykokwak a gagné";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            console.log(img2);
         }
         else if (ordi == "false") {
             over[0].classList.remove("empty");
@@ -88,6 +91,7 @@ function lose() {
     if (joueur3 <= 0) {
         if (ordi == "true") {
             over[0].classList.remove("empty");
+            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
             figCap[0].innerHTML = "Psykokwak a gagné";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
