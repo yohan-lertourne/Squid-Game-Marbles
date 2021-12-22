@@ -35,14 +35,14 @@ function win() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
+        message = `Joueur 1 a gagné ${number2} billes.`
     }
     else if (tour1 == "j1") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J2 a gagné ${number2} billes.`
+        message = `Joueur 2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0) {
         over[0].classList.remove("empty");
@@ -69,18 +69,18 @@ function lose() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J1 a gagné ${number2} billes.`
+        message = `Joueur 1 a gagné ${number2} billes.`
     }
     else if (tour1 == "j2") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `J2 a gagné ${number2} billes.`
+        message = `Joueur 2 a gagné ${number2} billes.`
     }
     if (joueur3 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "J2 a gagné"
+        figCap[0].innerHTML = "Joueur 2 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
@@ -88,7 +88,7 @@ function lose() {
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "J1 a gagné"
+        figCap[0].innerHTML = "Joueur 1 a gagné"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
