@@ -172,11 +172,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function withBot(){ 
     window.localStorage.setItem("bot","true");
-
+    input[0].classList.add('select');
+    input[1].classList.remove('select');
 }
 function withoutBot(){ 
     window.localStorage.setItem("bot","false");
-
+    input[1].classList.add('select');
+    input[0].classList.remove('select');
 }
 randString = rand.toString();
 function bot() {
