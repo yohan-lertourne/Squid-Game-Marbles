@@ -180,6 +180,7 @@ function withBot(){
     window.localStorage.setItem("bot","true");
     input[0].classList.add('select');
     input[1].classList.remove('select');
+    get[0].disabled = false;
 }
 function withoutBot(){ 
     window.localStorage.setItem("bot","false");
