@@ -233,5 +233,5 @@ function bot() {
                 buttonChoice[2].disabled = false;
                 break;
         };
-    }, 4000);
+    }, 2000);
 }

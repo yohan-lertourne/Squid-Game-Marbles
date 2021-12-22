@@ -263,7 +263,7 @@ function phasesJeu(phase: any) {
                 window.localStorage.setItem('tour', "j1");
             }
             getLocalStorage();
-            const myTimeout = setTimeout(myGreeting, 2000);
+            const myTimeout = setTimeout(myGreeting, 4000);
             function myGreeting() {
                 window.localStorage.setItem("phase","1");
                 phasesJeu("1");
