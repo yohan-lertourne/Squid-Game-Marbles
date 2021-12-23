@@ -100,7 +100,7 @@ function lose() {
             let sound = new Audio("./assets/psyko_14.mp3");
             setTimeout(function(){
                 sound.pause();
-            },6500);
+            },6300);
             sound.play();
             over[0].classList.remove("empty");
             img2.setAttribute("src", "./assets/Psycho-Dedax.png");
