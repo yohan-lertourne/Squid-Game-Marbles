@@ -49,9 +49,9 @@ function win() {
         if (ordi == "true") {
             audio.pause();
             let sound = new Audio("./assets/psyko_14.mp3");
-            setTimeout(function(){
+            setTimeout(function () {
                 sound.pause();
-            },6300);
+            }, 6300);
             sound.play();
             over[0].classList.remove("empty");
             img2.setAttribute("src", "./assets/Psycho-Dedax.png");
@@ -98,7 +98,7 @@ function lose() {
         if (ordi == "true") {
             audio.pause();
             let sound = new Audio("./assets/psyko_14.mp3");
-            setTimeout(function(){
+            setTimeout(function () {
                 sound.pause();
             },6300);
             sound.play();
