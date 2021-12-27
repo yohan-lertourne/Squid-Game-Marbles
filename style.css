@@ -317,7 +317,6 @@ audio{
 }
 .rules{
     position: absolute;
-    border-top:2px solid grey;
     z-index:7;
     top: 0;
     bottom: 0;
