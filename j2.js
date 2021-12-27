@@ -215,9 +215,12 @@ function colors() {
     get[0].style.background = `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
 }
 setInterval(colors, 2000);
+function phased() {
+    phasesJeu("0");
+}
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
-    get[0].addEventListener("click", phasesJeu);
+    get[0].addEventListener("click", phased);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
     input[0].addEventListener("click", withBot);
