@@ -224,6 +224,10 @@ setInterval(colors, 2000);
 function phased() {
     phasesJeu("1");
 }
+function rules() {
+    let rule = document.getElementsByClassName("rules");
+    rule[0].classList.toggle("empty");
+}
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
     get[0].addEventListener("click", phased);
@@ -231,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
     get[2].addEventListener("click", impair);
     input[0].addEventListener("click", withBot);
     input[1].addEventListener("click", withoutBot);
+    buttonChoice[3].addEventListener("click", rules);
 });
 function withBot() {
     window.localStorage.setItem("bot", "true");
