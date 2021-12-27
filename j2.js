@@ -1,5 +1,5 @@
 "use strict";
-let joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
+let joueur1;
 let joueur2;
 let numberMarble;
 let phase1;
@@ -37,7 +37,7 @@ function win() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `JOUEUR 1 A GAGNÉ ${number2} BILLES.`;
+        message = `JOUEUR 1 A GAGNE ${number2} BILLES.`;
     }
     else if (tour1 == "j1") {
         joueur3 -= number2;
