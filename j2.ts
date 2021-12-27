@@ -1,13 +1,13 @@
-let joueur1: any;
-let joueur2: any;
-let numberMarble: any;
-let phase1: any;
-let tour1:any;
-let get: any = document.getElementsByTagName("button");
-let actif: any = document.getElementsByTagName("h2");
-let articles: any = document.getElementsByTagName("article");
-let figCap = document.getElementsByTagName("figcaption");
-let test: string = actif[1].textContent;
+let joueur1 : string|null = window.localStorage.getItem("nombreBillesJoueur1");
+let joueur2 : string|null;
+let numberMarble: string|null;
+let phase1 : string|null;
+let tour1: string|null;
+let get: HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName("button");
+let actif: HTMLCollection = document.getElementsByTagName("h2");
+let articles: HTMLCollection = document.getElementsByTagName("article");
+let figCap: HTMLCollection = document.getElementsByTagName("figcaption");
+let test: string|null = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
 let number2: number;
@@ -16,13 +16,16 @@ let section = document.getElementsByTagName("section");
 let message:string;
 let rand: number = Math.floor((Math.random() * (10)) +1 );
 let randString: string;
-let ordi:any;
-let input: any = document.getElementsByTagName("input");
-let psyko: any = document.getElementsByTagName("div");
-let img2:any = document.querySelector("footer img");
+let ordi:string|null;
+let input: HTMLCollection = document.getElementsByTagName("input");
+let psyko: HTMLCollection = document.getElementsByTagName("div");
+let img2: HTMLImageElement|null = document.querySelector("footer img");
 
-function getLocalStorage() {
+function getLocalStorage():void {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
+    if(typeof joueur1 === 'string'){
+
+    }
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
     numberMarble = window.localStorage.getItem("nombreBilles");
     phase1 = window.localStorage.getItem("phase");
@@ -55,7 +58,9 @@ function win() {
             },6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            if(img2){
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
             figCap[0].innerHTML = "Psykokwak a gagné"
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
@@ -106,7 +111,9 @@ function lose() {
             },6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            if(img2){
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
             figCap[0].innerHTML = "Psykokwak a gagné"
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
@@ -206,7 +213,7 @@ function billes() {
     tab1=[];
 }
 function colors(){
-    let colors:any = document.getElementsByTagName("span");
+    let colors:HTMLCollectionOf<HTMLSpanElement> = document.getElementsByTagName("span");
     let r = Math.floor(Math.random()*255);
     let g = Math.floor(Math.random()*255);
     let b = Math.floor(Math.random()*255);
@@ -244,7 +251,7 @@ function withoutBot(){
 randString = rand.toString();
 function bot() {
     getLocalStorage();
-    let img:any =psyko[0].getElementsByTagName("img");
+    let img:HTMLCollectionOf<HTMLImageElement> = psyko[0].getElementsByTagName("img");
     img[0].setAttribute("src", "./assets/psykokwak.png")
     psyko[0].classList.add("psy");
     setTimeout(function() {

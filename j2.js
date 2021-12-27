@@ -1,5 +1,5 @@
 "use strict";
-let joueur1;
+let joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
 let joueur2;
 let numberMarble;
 let phase1;
@@ -23,6 +23,8 @@ let psyko = document.getElementsByTagName("div");
 let img2 = document.querySelector("footer img");
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
+    if (typeof joueur1 === 'string') {
+    }
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
     numberMarble = window.localStorage.getItem("nombreBilles");
     phase1 = window.localStorage.getItem("phase");
@@ -54,7 +56,9 @@ function win() {
             }, 6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            if (img2) {
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
             figCap[0].innerHTML = "Psykokwak a gagné";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
@@ -100,10 +104,12 @@ function lose() {
             let sound = new Audio("./assets/psyko_14.mp3");
             setTimeout(function () {
                 sound.pause();
-            },6300);
+            }, 6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            if (img2) {
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
             figCap[0].innerHTML = "Psykokwak a gagné";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
