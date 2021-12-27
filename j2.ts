@@ -49,7 +49,7 @@ function win() {
     if (joueur3 <= 0) {
         if (ordi == "true"){
             audio.pause();
-            let sound = new Audio("./assets/psyko_14.mp3");
+            let sound = new Audio("./assets/psyko_14.mp3") as HTMLAudioElement;
             setTimeout(function(){
                 sound.pause();
             },6300);
@@ -102,7 +102,7 @@ function lose() {
     if (joueur3 <= 0) {
         if (ordi == "true"){
             audio.pause();
-            let sound = new Audio("./assets/psyko_14.mp3");
+            let sound = new Audio("./assets/psyko_14.mp3") as HTMLAudioElement;
             setTimeout(function(){
                 sound.pause();
             },6300);
