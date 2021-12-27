@@ -4,7 +4,7 @@ let titreJoueurs: HTMLCollection = document.getElementsByTagName("h2");
 let varStor : string|null;
 let figlist: HTMLCollection = document.getElementsByTagName("figure");
 let figcaptionlist: HTMLCollection = document.getElementsByTagName("figcaption");
-let buttonChoice: HTMLCollection = document.getElementsByTagName("button");
+let buttonChoice: HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName("button");
 let articleWindow: HTMLCollection = document.getElementsByTagName("article");
 let spanStart: HTMLCollection = document.getElementsByTagName("span");
 let h1: HTMLCollection = document.getElementsByTagName("h1");
