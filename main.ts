@@ -1,16 +1,16 @@
 // Initialisation des variables
-let sectionInverse = document.getElementsByTagName("section");
-let titreJoueurs = document.getElementsByTagName("h2");
+let sectionInverse: HTMLCollection = document.getElementsByTagName("section");
+let titreJoueurs: HTMLCollection = document.getElementsByTagName("h2");
 let varStor : string|null;
-let figlist = document.getElementsByTagName("figure");
-let figcaptionlist = document.getElementsByTagName("figcaption");
-let buttonChoice = document.getElementsByTagName("button");
-let articleWindow = document.getElementsByTagName("article");
-let spanStart = document.getElementsByTagName("span");
-let h1 = document.getElementsByTagName("h1");
-let start = document.getElementsByClassName("start");
-let marbles = document.getElementsByClassName("bille");
-let over = document.getElementsByClassName("over");
+let figlist: HTMLCollection = document.getElementsByTagName("figure");
+let figcaptionlist: HTMLCollection = document.getElementsByTagName("figcaption");
+let buttonChoice: HTMLCollection = document.getElementsByTagName("button");
+let articleWindow: HTMLCollection = document.getElementsByTagName("article");
+let spanStart: HTMLCollection = document.getElementsByTagName("span");
+let h1: HTMLCollection = document.getElementsByTagName("h1");
+let start: HTMLCollection = document.getElementsByClassName("start");
+let marbles: HTMLCollection = document.getElementsByClassName("bille");
+let over: HTMLCollection = document.getElementsByClassName("over");
 let billes1 : number = 10;
 let initBille:number= 0;
 let phase:number = 0;
