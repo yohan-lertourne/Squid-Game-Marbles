@@ -228,22 +228,22 @@ function rules() {
     let rule = document.getElementsByClassName("rules");
     rule[0].classList.toggle("empty");
 }
-function reset() {
-    window.localStorage.clear();
-    phasesJeu("0");
-    if (!over[0].classList.contains("empty")) {
-        over[0].classList.add("empty");
-    }
-    articles[1].innerHTML = `
-    <h2>JOUEUR 2</h2>
-    <button disabled>PAIR</button>
-    <button disabled>IMPAIR</button>
-    `;
-    get[0].disabled = true;
-    input[1].classList.remove('select');
-    input[0].classList.remove('select');
-    initPlayers();
-}
+// function reset(){
+//     window.localStorage.clear();
+//     phasesJeu("0");
+//     if(!over[0].classList.contains("empty")){
+//         over[0].classList.add("empty");
+//     }
+//     articles[1].innerHTML = `
+//     <h2>JOUEUR 2</h2>
+//     <button disabled>PAIR</button>
+//     <button disabled>IMPAIR</button>
+//     `;
+//     get[0].disabled = true;
+//     input[1].classList.remove('select');
+//     input[0].classList.remove('select');
+//     initPlayers();
+// }
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
     get[0].addEventListener("click", phased);
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
     input[0].addEventListener("click", withBot);
     input[1].addEventListener("click", withoutBot);
     buttonChoice[3].addEventListener("click", rules);
-    buttonChoice[4].addEventListener("click", reset);
+    //   buttonChoice[4].addEventListener("click",reset);
 });
 function withBot() {
     window.localStorage.setItem("bot", "true");
