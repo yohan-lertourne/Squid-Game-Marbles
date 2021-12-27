@@ -21,6 +21,7 @@ let ordi;
 let input = document.getElementsByTagName("input");
 let psyko = document.getElementsByTagName("div");
 let img2 = document.querySelector("footer img");
+let overed = false;
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
@@ -61,7 +62,7 @@ function win() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
-            console.log(img2);
+            overed = true;
         }
         else if (ordi == "false") {
             over[0].classList.remove("empty");
@@ -69,6 +70,7 @@ function win() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            overed = true;
         }
     }
     else if (joueur4 <= 0) {
@@ -77,6 +79,7 @@ function win() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
@@ -112,6 +115,7 @@ function lose() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            overed = true;
         }
         else if (ordi == "false") {
             over[0].classList.remove("empty");
@@ -119,6 +123,7 @@ function lose() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            overed = true;
         }
     }
     else if (joueur4 <= 0) {
@@ -127,6 +132,7 @@ function lose() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
@@ -216,7 +222,7 @@ function colors() {
 }
 setInterval(colors, 2000);
 function phased() {
-    phasesJeu("0");
+    phasesJeu("1");
 }
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();

@@ -249,6 +249,7 @@ function phasesJeu(phase: string|null):void {
             }
             break;
         case "3":
+            if (!overed){
             let idImg: string|null=localStorage.getItem("nombreBilles");
                         
             articles[0].innerHTML = `<h2>${message}</h2>
@@ -275,6 +276,7 @@ function phasesJeu(phase: string|null):void {
                 inverserJoueurs();
             }
             break;
+        }
     }
 }
 // Récuperation de la valeur choisie par le joueur

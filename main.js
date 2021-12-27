@@ -242,28 +242,30 @@ function phasesJeu(phase) {
             }
             break;
         case "3":
-            let idImg = localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = `<h2>${message}</h2>
+            if (!overed) {
+                let idImg = localStorage.getItem("nombreBilles");
+                articles[0].innerHTML = `<h2>${message}</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
-            articles[0].classList.add("full");
-            articles[1].classList.add("empty");
-            window.localStorage.setItem('phase', "3");
-            if (tour1 == "j1") {
-                window.localStorage.setItem('tour', "j2");
+                articles[0].classList.add("full");
+                articles[1].classList.add("empty");
+                window.localStorage.setItem('phase', "3");
+                if (tour1 == "j1") {
+                    window.localStorage.setItem('tour', "j2");
+                }
+                else if (tour1 == "j2") {
+                    window.localStorage.setItem('tour', "j1");
+                }
+                getLocalStorage();
+                const myTimeout = setTimeout(myGreeting, 2000);
+                function myGreeting() {
+                    window.localStorage.setItem("phase", "1");
+                    phasesJeu("1");
+                    inverserJoueurs();
+                }
+                break;
             }
-            else if (tour1 == "j2") {
-                window.localStorage.setItem('tour', "j1");
-            }
-            getLocalStorage();
-            const myTimeout = setTimeout(myGreeting, 2000);
-            function myGreeting() {
-                window.localStorage.setItem("phase", "1");
-                phasesJeu("1");
-                inverserJoueurs();
-            }
-            break;
     }
 }
 // Récuperation de la valeur choisie par le joueur
