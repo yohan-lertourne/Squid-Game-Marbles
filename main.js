@@ -2,7 +2,7 @@
 // Initialisation des variables
 let sectionInverse = document.getElementsByTagName("section");
 let titreJoueurs = document.getElementsByTagName("h2");
-let varStor = 0;
+let varStor;
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
@@ -156,10 +156,10 @@ setInterval(function () {
 }), 3000;
 // Initialisation du jeu
 function initPlayers() {
-    window.localStorage.setItem('nombreBillesJoueur1', billes1);
-    window.localStorage.setItem('nombreBillesJoueur2', billes1);
-    window.localStorage.setItem('nombreBilles', initBille);
-    window.localStorage.setItem('phase', phase);
+    window.localStorage.setItem('nombreBillesJoueur1', billes1.toString());
+    window.localStorage.setItem('nombreBillesJoueur2', billes1.toString());
+    window.localStorage.setItem('nombreBilles', initBille.toString());
+    window.localStorage.setItem('phase', phase.toString());
     window.localStorage.setItem('tour', tour);
 }
 if (!window.localStorage.getItem("nombreBillesJoueur1")) {

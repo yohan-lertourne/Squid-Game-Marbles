@@ -1,7 +1,7 @@
 // Initialisation des variables
 let sectionInverse = document.getElementsByTagName("section");
 let titreJoueurs = document.getElementsByTagName("h2");
-let varStor : any = 0;
+let varStor : string|null;
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
@@ -11,12 +11,12 @@ let h1 = document.getElementsByTagName("h1");
 let start = document.getElementsByClassName("start");
 let marbles = document.getElementsByClassName("bille");
 let over = document.getElementsByClassName("over");
-let billes1 : any = 10;
-let initBille:any= 0;
-let phase:any = 0;
-let tour: any = "j1";
+let billes1 : number = 10;
+let initBille:number= 0;
+let phase:number = 0;
+let tour: string = "j1";
 /*AUDIO*/
-let audio:any = document.getElementById("audio");
+let audio = document.getElementById("audio") as HTMLAudioElement;
 setInterval(function () {
     let audioTime = audio.currentTime;
     //console.log(audio.currentTime)
@@ -155,10 +155,10 @@ setInterval(function () {
 }), 3000;
 // Initialisation du jeu
 function initPlayers(){
-    window.localStorage.setItem('nombreBillesJoueur1', billes1);
-    window.localStorage.setItem('nombreBillesJoueur2', billes1);
-    window.localStorage.setItem('nombreBilles', initBille);
-    window.localStorage.setItem('phase', phase);
+    window.localStorage.setItem('nombreBillesJoueur1', billes1.toString());
+    window.localStorage.setItem('nombreBillesJoueur2', billes1.toString());
+    window.localStorage.setItem('nombreBilles', initBille.toString());
+    window.localStorage.setItem('phase', phase.toString());
     window.localStorage.setItem('tour', tour);
 }
 
@@ -184,7 +184,7 @@ function inverserJoueurs(){
 
 
 // Switcher les phases de jeu
-function phasesJeu(phase: any) {
+function phasesJeu(phase: string|null):void {
     switch (phase) {
         case "0":
             getLocalStorage();
@@ -227,8 +227,8 @@ function phasesJeu(phase: any) {
             break;
            
         case "2":
-            let temp: any= localStorage.getItem("tour");
-            let titreTemp: any;
+            let temp: string|null= localStorage.getItem("tour");
+            let titreTemp: string;
 
             if (temp=="j1"){
                 titreTemp="Joueur 1";
@@ -250,7 +250,7 @@ function phasesJeu(phase: any) {
             }
             break;
         case "3":
-            let idImg: any=localStorage.getItem("nombreBilles");
+            let idImg: string|null=localStorage.getItem("nombreBilles");
                         
             articles[0].innerHTML = `<h2>${message}</h2>
                                     <figure class="box">

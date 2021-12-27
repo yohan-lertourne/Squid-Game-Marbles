@@ -23,8 +23,6 @@ let psyko = document.getElementsByTagName("div");
 let img2 = document.querySelector("footer img");
 function getLocalStorage() {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
-    if (typeof joueur1 === 'string') {
-    }
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
     numberMarble = window.localStorage.getItem("nombreBilles");
     phase1 = window.localStorage.getItem("phase");
