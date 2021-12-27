@@ -168,14 +168,15 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")){
 
 // Inverser les joueurs
 function inverserJoueurs(){
+    getLocalStorage();
     sectionInverse[0].classList.toggle("reverse");
     if (tour1=="j2"){
-        titreJoueurs[0].innerHTML = "JOUEUR 2";
-        titreJoueurs[1].innerHTML = "JOUEUR 1";
+        titreJoueurs[0].innerHTML = `JOUEUR 2 : ${joueur2} BILLES`;
+        titreJoueurs[1].innerHTML = `JOUEUR 1 : ${joueur1} BILLES`;
     }
     else{
-        titreJoueurs[0].innerHTML = "JOUEUR 1";
-        titreJoueurs[1].innerHTML = "JOUEUR 2";
+        titreJoueurs[0].innerHTML = `JOUEUR 1 : ${joueur1} BILLES`;
+        titreJoueurs[1].innerHTML = `JOUEUR 2 : ${joueur2} BILLES`;
     }
 
     buttonChoice[1].disabled = true;
