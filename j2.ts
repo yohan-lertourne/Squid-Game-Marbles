@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
     get[2].addEventListener("click", impair);
     input[0].addEventListener("click", withBot);
     input[1].addEventListener("click", withoutBot);
-
+ 
 });
 function withBot(){ 
     window.localStorage.setItem("bot","true");

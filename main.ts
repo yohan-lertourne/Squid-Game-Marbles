@@ -182,7 +182,6 @@ function inverserJoueurs(){
     buttonChoice[2].disabled = true;
 }
 
-
 // Switcher les phases de jeu
 function phasesJeu(phase: string|null):void {
     switch (phase) {
