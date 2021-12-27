@@ -200,10 +200,12 @@ function phasesJeu(phase: string|null):void {
             });
             break;
         case "1":
+            getLocalStorage();
             start[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
-            articles[0].innerHTML = `<h2>JOUEUR 1</h2>`;
+            articles[0].innerHTML = `<h2>JOUEUR 1 :${joueur1} BILLES</h2>`;
+            titreJoueurs[1].innerHTML += ` :${joueur2} BILLES`;
             billes();
             getLocalStorage();
             if (tour1 == "j2" && ordi == "true"){
