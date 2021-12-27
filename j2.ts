@@ -20,6 +20,7 @@ let ordi:string|null;
 let input: HTMLCollection = document.getElementsByTagName("input");
 let psyko: HTMLCollection = document.getElementsByTagName("div");
 let img2: HTMLImageElement|null = document.querySelector("footer img");
+let overed: boolean = false;
 
 function getLocalStorage():void {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
@@ -62,7 +63,7 @@ function win() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
-            console.log(img2);
+            overed = true;
         }
         else if(ordi == "false") {
         over[0].classList.remove("empty");
@@ -70,6 +71,7 @@ function win() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
         }
         
     }
@@ -79,6 +81,7 @@ function win() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
@@ -115,6 +118,7 @@ function lose() {
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            overed = true;
         }
         else if(ordi == "false"){
         over[0].classList.remove("empty");
@@ -122,6 +126,7 @@ function lose() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
         }
         
     }
@@ -131,6 +136,7 @@ function lose() {
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
