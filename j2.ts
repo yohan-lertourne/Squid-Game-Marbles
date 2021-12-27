@@ -224,7 +224,7 @@ function colors(){
 }
 setInterval(colors,2000);
 function phased(){
-    phasesJeu("0");
+    phasesJeu("1");
 }
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
