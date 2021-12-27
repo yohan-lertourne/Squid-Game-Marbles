@@ -233,7 +233,7 @@ function phased(){
     phasesJeu("1");
 }
 function rules(){
-    let rule = document.getElementsByClassName("rules")
+    let rule = document.getElementsByClassName("rules") as HTMLCollectionOf<HTMLElement>;
     rule[0].classList.toggle("empty");
 }
 

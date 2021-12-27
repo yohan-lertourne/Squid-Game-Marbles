@@ -34,6 +34,9 @@ body{
     font-family: 'Squid-Gamu',sans-serif;
     overflow:hidden;
 }
+button{
+    font-family: 'Squid-Gamu';
+}
 /*FOND*/
 header{
     background: url(./assets/logo.gif);
@@ -302,7 +305,6 @@ audio{
 }
 /*RULES*/
 .rulesButton{
-    font-family: 'Squid-Gamu';
     background-color: #000;
     color:white;
     border-radius: 2em;
