@@ -247,6 +247,9 @@ function reset(){
     <button disabled>PAIR</button>
     <button disabled>IMPAIR</button>
     `;
+    get[0].disabled = true;
+    input[1].classList.remove('select');
+    input[0].classList.remove('select');
     initPlayers();
 }
 document.addEventListener('DOMContentLoaded', function () {
