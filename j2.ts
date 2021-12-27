@@ -11,7 +11,7 @@ let test: string|null = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
 let number2: number;
-let tab1: any = [];
+let tab1: Array<number> = [];
 let section = document.getElementsByTagName("section");
 let message:string;
 let rand: number = Math.floor((Math.random() * (10)) +1 );
