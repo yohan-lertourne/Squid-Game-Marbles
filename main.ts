@@ -170,12 +170,12 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")){
 function inverserJoueurs(){
     sectionInverse[0].classList.toggle("reverse");
     if (tour1=="j2"){
-        titreJoueurs[0].innerHTML = "Joueur 2";
-        titreJoueurs[1].innerHTML = "Joueur 1";
+        titreJoueurs[0].innerHTML = "JOUEUR 2";
+        titreJoueurs[1].innerHTML = "JOUEUR 1";
     }
     else{
-        titreJoueurs[0].innerHTML = "Joueur 1";
-        titreJoueurs[1].innerHTML = "Joueur 2";
+        titreJoueurs[0].innerHTML = "JOUEUR 1";
+        titreJoueurs[1].innerHTML = "JOUEUR 2";
     }
 
     buttonChoice[1].disabled = true;
@@ -202,7 +202,7 @@ function phasesJeu(phase: string|null):void {
             start[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
-            articles[0].innerHTML = `<h2>Joueur 1</h2>`;
+            articles[0].innerHTML = `<h2>JOUEUR 1</h2>`;
             billes();
             getLocalStorage();
             if (tour1 == "j2" && ordi == "true"){
@@ -230,10 +230,10 @@ function phasesJeu(phase: string|null):void {
             let titreTemp: string;
 
             if (temp=="j1"){
-                titreTemp="Joueur 1";
+                titreTemp="JOUEUR 1";
             }
             else{
-                titreTemp="Joueur 2";
+                titreTemp="JOUEUR 2";
             }
 
             articles[0].innerHTML = `<h2>${titreTemp}</h2>

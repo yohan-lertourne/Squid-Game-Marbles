@@ -37,14 +37,14 @@ function win() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 1 a gagné ${number2} billes.`;
+        message = `JOUEUR 1 A GAGNÉ ${number2} BILLES.`;
     }
     else if (tour1 == "j1") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 2 a gagné ${number2} billes.`;
+        message = `JOUEUR 2 A GAGNÉ ${number2} BILLES.`;
     }
     if (joueur3 <= 0) {
         if (ordi == "true") {
@@ -58,7 +58,7 @@ function win() {
             if (img2) {
                 img2.setAttribute("src", "./assets/Psycho-Dedax.png");
             }
-            figCap[0].innerHTML = "Psykokwak a gagné";
+            figCap[0].innerHTML = "PSYKOKWAK A GAGNÉ";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
@@ -66,7 +66,7 @@ function win() {
         }
         else if (ordi == "false") {
             over[0].classList.remove("empty");
-            figCap[0].innerHTML = "Joueur 2 a gagné";
+            figCap[0].innerHTML = "JOUEUR 2 A GAGNÉ";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
@@ -75,7 +75,7 @@ function win() {
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 1 a gagné";
+        figCap[0].innerHTML = "JOUEUR 1 A GAGNÉ";
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
@@ -90,14 +90,14 @@ function lose() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 1 a gagné ${number2} billes.`;
+        message = `JOUEUR 1 A GAGNÉ ${number2} BILLES.`;
     }
     else if (tour1 == "j2") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 2 a gagné ${number2} billes.`;
+        message = `JOUEUR 2 A GAGNÉ ${number2} BILLES.`;
     }
     if (joueur3 <= 0) {
         if (ordi == "true") {
@@ -119,7 +119,7 @@ function lose() {
         }
         else if (ordi == "false") {
             over[0].classList.remove("empty");
-            figCap[0].innerHTML = "Joueur 2 a gagné";
+            figCap[0].innerHTML = "JOUEUR 2 A GAGNÉ";
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
@@ -128,7 +128,7 @@ function lose() {
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 1 a gagné";
+        figCap[0].innerHTML = "JOUEUR 1 A GAGNÉ";
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
