@@ -11,8 +11,8 @@ let test: string|null = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
 let number2: number;
-let tab1: any = [];
-let section = document.getElementsByTagName("section");
+let tab1: Array<number> = [];
+let section: HTMLCollection = document.getElementsByTagName("section");
 let message:string;
 let rand: number = Math.floor((Math.random() * (10)) +1 );
 let randString: string;
@@ -211,14 +211,14 @@ function billes() {
 }
 function colors(){
     let colors:HTMLCollectionOf<HTMLSpanElement> = document.getElementsByTagName("span");
-    let r = Math.floor(Math.random()*255);
-    let g = Math.floor(Math.random()*255);
-    let b = Math.floor(Math.random()*255);
-    let rng1 =` rgb(${r},${g},${b})`;
+    let r: number = Math.floor(Math.random()*255);
+    let g: number = Math.floor(Math.random()*255);
+    let b: number = Math.floor(Math.random()*255);
+    let rng1:string =` rgb(${r},${g},${b})`;
     r = Math.floor(Math.random()*255);
     g = Math.floor(Math.random()*255);
     b = Math.floor(Math.random()*255);
-    let rng2 = `rgb(${r},${g},${b})`;
+    let rng2:string = `rgb(${r},${g},${b})`;
     colors[0].style.background= `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
     get[0].style.background= `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
 }
