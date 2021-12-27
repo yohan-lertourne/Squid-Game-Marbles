@@ -281,12 +281,13 @@ audio{
     margin:0;
     width: 100%;
     height: -webkit-fill-available;
+    margin-top: 3em;
 }
 .over figcaption{
-    left:40%;
-    top:1.5em;
+    left: 45%;
+    top: 6.7em;
     position: absolute;
-    z-index:6;
+    z-index: 6;
 }
 .psy{
     position: absolute;

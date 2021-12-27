@@ -18,7 +18,7 @@ let tour: string = "j1";
 /*AUDIO*/
 let audio = document.getElementById("audio") as HTMLAudioElement;
 setInterval(function () {
-    let audioTime = audio.currentTime;
+    let audioTime:number = audio.currentTime;
     //console.log(audio.currentTime)
     if (audioTime > 19 && audioTime < 28.7) {
         for (let i:number = 0; i < marbles.length; i++) {
