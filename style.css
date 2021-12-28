@@ -334,3 +334,31 @@ audio{
     width:50%;
     height:-webkit-fill-available;
 }
+@media screen and (max-width: 1300px) {
+    h1{
+        margin:7em;
+    }
+    .startButton{
+        height:25em;
+        width:25em;
+    }
+    span{
+        height:.1em;
+        width:.1em;
+        margin:2.25em;
+        padding:1em;
+    }
+    input{
+        margin:14em;
+    }
+    .bille{
+        height:5em;
+        width:5em;
+    }
+    article figcaption{
+        left:20%;
+        bottom:4.5em;
+        width:1em;
+        height:1em;
+    }
+  }
