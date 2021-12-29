@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <script src="j2.js" defer></script>
     <title>Squid-Game</title>
 </head>
+
 <body>
     <header></header>
     <main>
@@ -18,21 +20,52 @@
             <div class="start empty">
                 <button class="startButton" disabled></button>
                 <span></span>
-                <h1>Play</h1>
-                <input type="button" value="1 Joueur">
-                <input type="button" value="2 Joueurs">
+                <h1>JOUER</h1>
+                <input type="button" value="1 JOUEUR">
+                <input type="button" value="2 JOUEURS">
             </div>
             <div class="audio">
-                <audio id="audio" src="./assets/8-Bit-Squid.mp3"controls loop></audio>
+                <audio id="audio" src="./assets/8-Bit-Squid.mp3" controls loop></audio>
             </div>
             <article class="empty">
-                <h2>Joueur 1</h2>
+                <h2>JOUEUR 1</h2>
             </article>
             <article class="empty">
-                <h2>Joueur 2</h2>
-                <button disabled>Pair</button>
-                <button disabled>Impair</button>
+                <h2>JOUEUR 2</h2>
+                <button disabled>PAIR</button>
+                <button disabled>IMPAIR</button>
             </article>
+            <button class="rulesButton">REGLES</button>
+            <!-- <button class="resetButton">RESET</button> -->
+            <div class="rules empty">
+                <article>
+                    <h2>REGLES DU JEU:</h2>
+                    <p>
+                        VOUS POUVEZ CHOISIR DE JOUER CONTRE UN BOT (MODE 1 JOUEUR) OU A 2 (MODE 2 JOUEURS). CLIQUEZ
+                        ENSUITE SUR LE BOUTON PLAY.
+                    </p>
+                    <p>
+                        UNE FOIS LA PARTIE LANCEE, LE JOUEUR 1 CHOISIT COMBIEN DE BILLES IL VEUT PARIER. POUR CELA, RIEN
+                        DE PLUS SIMPLE: APPUYER SUR LA BILLE AVEC LE NUMERO CORRESPOND AU NOMBRE DE BILLES VOULUES.
+                    </p>
+                    <p>
+                        LE TOUR DU JOUEUR 2 SE DECLENCHE ALORS. CELUI-CI DOIT CHOISIR S'IL PENSE QUE LE NOMBRE DE BILLES DANS VOTRE MAIN EST UN NOMBRE PAIR OU IMPAIR.
+                    </p>
+                    <p>
+                        S'IL GAGNE, ALORS IL REMPORTE LE NOMBRE DE BILLES QUE LE JOUEUR 1 AVAIT DANS SA MAIN. DANS
+                        L'AUTRE CAS, IL DOIT DONNER AU JOUEUR 1 CE MEME NOMBRE DE BILLES.
+                    </p>
+                    <p>
+                        LE TOUR DE JEU FINIT, ON INVERSE LES ROLES: C'EST AU JOUEUR 2 DE CHOISIR LE NOMBRE DE BILLES ET AU JOUEUR 1 DE DEVINER SI C'EST PAIR OU IMPAIR.
+                    </p>
+                    <p>
+                        LA PARTIE SE TERMINE LORSQUE LE NOMBRE DE BILLES D'UN JOUEUR TOMBE A 0: CE JOUEUR A DONC PERDU.
+                    </p>
+                    <p>
+                        SI VOUS JOUEZ CONTRE LE BOT, ATTENDEZ QU'IL CHOISISSE AVANT DE JOUER.
+                    </p>
+                </article>
+            </div>
         </section>
     </main>
     <footer>
@@ -44,4 +77,5 @@
         </div>
     </footer>
 </body>
+
 </html>

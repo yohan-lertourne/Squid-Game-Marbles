@@ -2,7 +2,7 @@
 // Initialisation des variables
 let sectionInverse = document.getElementsByTagName("section");
 let titreJoueurs = document.getElementsByTagName("h2");
-let varStor = 0;
+let varStor;
 let figlist = document.getElementsByTagName("figure");
 let figcaptionlist = document.getElementsByTagName("figcaption");
 let buttonChoice = document.getElementsByTagName("button");
@@ -155,10 +155,10 @@ setInterval(function () {
 }), 3000;
 // Initialisation du jeu
 function initPlayers() {
-    window.localStorage.setItem('nombreBillesJoueur1', billes1);
-    window.localStorage.setItem('nombreBillesJoueur2', billes1);
-    window.localStorage.setItem('nombreBilles', initBille);
-    window.localStorage.setItem('phase', phase);
+    window.localStorage.setItem('nombreBillesJoueur1', billes1.toString());
+    window.localStorage.setItem('nombreBillesJoueur2', billes1.toString());
+    window.localStorage.setItem('nombreBilles', initBille.toString());
+    window.localStorage.setItem('phase', phase.toString());
     window.localStorage.setItem('tour', tour);
 }
 if (!window.localStorage.getItem("nombreBillesJoueur1")) {
@@ -166,14 +166,15 @@ if (!window.localStorage.getItem("nombreBillesJoueur1")) {
 }
 // Inverser les joueurs
 function inverserJoueurs() {
+    getLocalStorage();
     sectionInverse[0].classList.toggle("reverse");
     if (tour1 == "j2") {
-        titreJoueurs[0].innerHTML = "Joueur 2";
-        titreJoueurs[1].innerHTML = "Joueur 1";
+        titreJoueurs[0].innerHTML = `JOUEUR 2 : ${joueur2} BILLES`;
+        titreJoueurs[1].innerHTML = `JOUEUR 1 : ${joueur1} BILLES`;
     }
     else {
-        titreJoueurs[0].innerHTML = "Joueur 1";
-        titreJoueurs[1].innerHTML = "Joueur 2";
+        titreJoueurs[0].innerHTML = `JOUEUR 1 : ${joueur1} BILLES`;
+        titreJoueurs[1].innerHTML = `JOUEUR 2 : ${joueur2} BILLES`;
     }
     buttonChoice[1].disabled = true;
     buttonChoice[2].disabled = true;
@@ -195,10 +196,12 @@ function phasesJeu(phase) {
             });
             break;
         case "1":
+            getLocalStorage();
             start[0].classList.add("empty");
             articles[0].classList.remove("empty");
             articles[1].classList.remove("empty");
-            articles[0].innerHTML = `<h2>Joueur 1</h2>`;
+            articles[0].innerHTML = `<h2>JOUEUR 1 :${joueur1} BILLES</h2>`;
+            titreJoueurs[1].innerHTML = `JOUEUR 2 :${joueur2} BILLES`;
             billes();
             getLocalStorage();
             if (tour1 == "j2" && ordi == "true") {
@@ -224,10 +227,10 @@ function phasesJeu(phase) {
             let temp = localStorage.getItem("tour");
             let titreTemp;
             if (temp == "j1") {
-                titreTemp = "Joueur 1";
+                titreTemp = "JOUEUR 1";
             }
             else {
-                titreTemp = "Joueur 2";
+                titreTemp = "JOUEUR 2";
             }
             articles[0].innerHTML = `<h2>${titreTemp}</h2>
                                     <figure class="box">
@@ -241,8 +244,9 @@ function phasesJeu(phase) {
             }
             break;
         case "3":
-            let idImg = localStorage.getItem("nombreBilles");
-            articles[0].innerHTML = `<h2>${message}</h2>
+            if (!overed) {
+                let idImg = localStorage.getItem("nombreBilles");
+                articles[0].innerHTML = `<h2>${message}</h2>
                                     <figure class="box">
                                         <img src="./assets/openedBox-${idImg}.png" alt="">
                                     </figure>`;
@@ -262,7 +266,6 @@ function phasesJeu(phase) {
                 phasesJeu("1");
                 inverserJoueurs();
             }
-            break;
     }
 }
 // Récuperation de la valeur choisie par le joueur

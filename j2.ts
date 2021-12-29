@@ -1,27 +1,28 @@
-let joueur1: any;
-let joueur2: any;
-let numberMarble: any;
-let phase1: any;
-let tour1:any;
-let get: any = document.getElementsByTagName("button");
-let actif: any = document.getElementsByTagName("h2");
-let articles: any = document.getElementsByTagName("article");
-let figCap = document.getElementsByTagName("figcaption");
-let test: string = actif[1].textContent;
+let joueur1 : string|null;
+let joueur2 : string|null;
+let numberMarble: string|null;
+let phase1 : string|null;
+let tour1: string|null;
+let get: HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName("button");
+let actif: HTMLCollection = document.getElementsByTagName("h2");
+let articles: HTMLCollection = document.getElementsByTagName("article");
+let figCap: HTMLCollection = document.getElementsByTagName("figcaption");
+let test: string|null = actif[1].textContent;
 let joueur3: number;
 let joueur4: number;
 let number2: number;
-let tab1: any = [];
-let section = document.getElementsByTagName("section");
+let tab1: Array<number> = [];
+let section: HTMLCollection = document.getElementsByTagName("section");
 let message:string;
 let rand: number = Math.floor((Math.random() * (10)) +1 );
 let randString: string;
-let ordi:any;
-let input: any = document.getElementsByTagName("input");
-let psyko: any = document.getElementsByTagName("div");
-let img2:any = document.querySelector("footer img");
+let ordi:string|null;
+let input: HTMLCollection = document.getElementsByTagName("input");
+let psyko: HTMLCollection = document.getElementsByTagName("div");
+let img2: HTMLImageElement|null = document.querySelector("footer img");
+let overed: boolean = false;
 
-function getLocalStorage() {
+function getLocalStorage():void {
     joueur1 = window.localStorage.getItem("nombreBillesJoueur1");
     joueur2 = window.localStorage.getItem("nombreBillesJoueur2");
     numberMarble = window.localStorage.getItem("nombreBilles");
@@ -37,46 +38,50 @@ function win() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 1 a gagné ${number2} billes.`
+        message = `JOUEUR 1 A GAGNE ${number2} BILLES.`
     }
     else if (tour1 == "j1") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 2 a gagné ${number2} billes.`
+        message = `JOUEUR 2 A GAGNE ${number2} BILLES.`
     }
     if (joueur3 <= 0) {
         if (ordi == "true"){
             audio.pause();
-            let sound = new Audio("./assets/psyko_14.mp3");
+            let sound = new Audio("./assets/psyko_14.mp3") as HTMLAudioElement;
             setTimeout(function(){
                 sound.pause();
             },6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
-            figCap[0].innerHTML = "Psykokwak a gagné"
+            if(img2){
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
+            figCap[0].innerHTML = "PSYKOKWAK A GAGNE"
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
-            console.log(img2);
+            overed = true;
         }
         else if(ordi == "false") {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 2 a gagné"
+        figCap[0].innerHTML = "JOUEUR 2 A GAGNE"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
         }
         
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 1 a gagné"
+        figCap[0].innerHTML = "JOUEUR 1 A GAGNE"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
@@ -88,45 +93,50 @@ function lose() {
         joueur4 -= number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 1 a gagné ${number2} billes.`
+        message = `JOUEUR 1 A GAGNE ${number2} BILLES.`
     }
     else if (tour1 == "j2") {
         joueur3 -= number2;
         joueur4 += number2;
         localStorage.setItem("nombreBillesJoueur1", joueur3.toString());
         localStorage.setItem("nombreBillesJoueur2", joueur4.toString());
-        message = `Joueur 2 a gagné ${number2} billes.`
+        message = `JOUEUR 2 A GAGNE ${number2} BILLES.`
     }
     if (joueur3 <= 0) {
         if (ordi == "true"){
             audio.pause();
-            let sound = new Audio("./assets/psyko_14.mp3");
+            let sound = new Audio("./assets/psyko_14.mp3") as HTMLAudioElement;
             setTimeout(function(){
                 sound.pause();
             },6300);
             sound.play();
             over[0].classList.remove("empty");
-            img2.setAttribute("src", "./assets/Psycho-Dedax.png");
-            figCap[0].innerHTML = "Psykokwak a gagné"
+            if(img2){
+                img2.setAttribute("src", "./assets/Psycho-Dedax.png");
+            }
+            figCap[0].innerHTML = "PSYKOKWAK A GAGNE"
             articles[0].classList.add("empty");
             articles[1].classList.add("empty");
             window.localStorage.clear();
+            overed = true;
         }
         else if(ordi == "false"){
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 2 a gagné"
+        figCap[0].innerHTML = "JOUEUR 2 A GAGNE"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
         }
         
     }
     else if (joueur4 <= 0) {
         over[0].classList.remove("empty");
-        figCap[0].innerHTML = "Joueur 1 a gagné"
+        figCap[0].innerHTML = "JOUEUR 1 A GAGNE"
         articles[0].classList.add("empty");
         articles[1].classList.add("empty");
         window.localStorage.clear();
+        overed = true;
     }
     phasesJeu("3");
 }
@@ -206,27 +216,51 @@ function billes() {
     tab1=[];
 }
 function colors(){
-    let colors:any = document.getElementsByTagName("span");
-    let r = Math.floor(Math.random()*255);
-    let g = Math.floor(Math.random()*255);
-    let b = Math.floor(Math.random()*255);
-    let rng1 =` rgb(${r},${g},${b})`;
+    let colors:HTMLCollectionOf<HTMLSpanElement> = document.getElementsByTagName("span");
+    let r: number = Math.floor(Math.random()*255);
+    let g: number = Math.floor(Math.random()*255);
+    let b: number = Math.floor(Math.random()*255);
+    let rng1:string =` rgb(${r},${g},${b})`;
     r = Math.floor(Math.random()*255);
     g = Math.floor(Math.random()*255);
     b = Math.floor(Math.random()*255);
-    let rng2 = `rgb(${r},${g},${b})`;
+    let rng2:string = `rgb(${r},${g},${b})`;
     colors[0].style.background= `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
     get[0].style.background= `linear-gradient(135deg,${rng1} 49%,${rng2} 50%)`;
 }
 setInterval(colors,2000);
+function phased(){
+    phasesJeu("1");
+}
+function rules(){
+    let rule = document.getElementsByClassName("rules") as HTMLCollectionOf<HTMLElement>;
+    rule[0].classList.toggle("empty");
+}
+// function reset(){
+//     window.localStorage.clear();
+//     phasesJeu("0");
+//     if(!over[0].classList.contains("empty")){
+//         over[0].classList.add("empty");
+//     }
+//     articles[1].innerHTML = `
+//     <h2>JOUEUR 2</h2>
+//     <button disabled>PAIR</button>
+//     <button disabled>IMPAIR</button>
+//     `;
+//     get[0].disabled = true;
+//     input[1].classList.remove('select');
+//     input[0].classList.remove('select');
+//     initPlayers();
+// }
 document.addEventListener('DOMContentLoaded', function () {
     getLocalStorage();
-    get[0].addEventListener("click", phasesJeu);
+    get[0].addEventListener("click", phased);
     get[1].addEventListener("click", pair);
     get[2].addEventListener("click", impair);
     input[0].addEventListener("click", withBot);
     input[1].addEventListener("click", withoutBot);
-
+    buttonChoice[3].addEventListener("click",rules);
+ //   buttonChoice[4].addEventListener("click",reset);
 });
 function withBot(){ 
     window.localStorage.setItem("bot","true");
@@ -244,7 +278,7 @@ function withoutBot(){
 randString = rand.toString();
 function bot() {
     getLocalStorage();
-    let img:any =psyko[0].getElementsByTagName("img");
+    let img:HTMLCollectionOf<HTMLImageElement> = psyko[0].getElementsByTagName("img");
     img[0].setAttribute("src", "./assets/psykokwak.png")
     psyko[0].classList.add("psy");
     setTimeout(function() {
